@@ -12,6 +12,7 @@
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="assets/css/sticky-footer.css">
   <style>
     .icon-list li::before {
       display: block;
@@ -29,12 +30,13 @@
     }
 
     body {
-      background-image: url('assets/images/5615293.jpg');
+      background-image: url('assets/images/5589241.jpg');
       background-position: center right;
 
     }
+    html, body {margin: 0; height: 100%; overflow: hidden}
 
-    h1,
+     
     p {
       font-family: "Sofia", sans-serif;
     }
@@ -51,22 +53,90 @@
       z-index: -1000;
     
     }
- 
+
+    
+    .divider {
+      display: flex;
+    }
+    .divider:before, .divider:after {
+      content: "";
+      flex: 1;
+    }
+
+    .line {
+      align-items: center;
+      margin: 1em -1em;
+    }
+    .line:before, .line:after {
+      height: 2px;
+      margin: 0 1em;
+    }
+
+    a:hover{
+      color: rgb(58, 17, 37);
+      text-shadow: 2px 2px #b8b3b3;
+
+    }
+
+    .glow:before, .glow:after {
+      height: 8px;
+      -webkit-filter: blur(5px);
+      border-radius: 5px;
+    }
+    .glow:before {
+      background: linear-gradient(to right, blue, hotpink);
+    }
+    .glow:after {
+      background: linear-gradient(to left, blue, hotpink);
+    }
+
+    .vr
+    {
+      display: flex;
+      height:100%;
+      width:3px;
+      background: linear-gradient(to right, blue, hotpink);
+      border:1px inset;
+      margin:5px
+    }
+
+
+    .typewriter {
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: .15em solid orange; /* The typwriter cursor */
+      white-space: nowrap; /* Keeps the content on a single line */
+      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+      letter-spacing: .15em; /* Adjust as needed */
+      animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
+
+    /* The typing effect */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
   </style>
 </head>
+ 
 
-<body>
+    
+<body class="d-flex flex-column h-100 overflow-hidden">
   <div class="col-lg-8 mx-auto p-3 py-md-5" id="app">
     <br>
-    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
-      <div href="#" class="d-flex align-items-center mx-auto">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg> -->
-        <!-- <span class="fs-4">Starter template</span> -->
-
+    <header class="d-flex align-items-center pb-3 mb-5">
+      <div class="d-flex align-items-center mx-auto">
         <div class="row gx-5">
           <div class="hstack gap-3">
             <a href="#" class="fw-bold text-uppercase text-decoration-none text-brown">Home</a>
-            <div class="vr"></div>
+            <div class="vr" ></div>
             <a href="#" class="fw-bold text-uppercase text-decoration-none text-brown">Agenda</a>
             <div class="vr"></div>
             <a href="#" class="fw-bold text-uppercase text-decoration-none text-brown">Gallery</a>
@@ -74,60 +144,36 @@
         </div>
       </div>
     </header>
+    <main class="" style="min-height: 100%;">
+      <h1 class="divider line glow fw-bold" style="font-family: Parisienne-Regular;" contenteditable>{{message}}</h1>
+      <img src="assets/images/flower2.png" style="width: 42vh; top: 0%; left:0px;" class="float">
+      <img src="assets/images/bridge1.png" style="width: 120px; top: 2%; left:50px; height: 134px;" class="float">
+      <img src="assets/images/flower1.png" style="width: 150px; top: 2%; left:30px;" class="float animate__animated animate__bounceIn">
 
-    <main>
-   
-      <h1 class="align-items-center mx-auto">{{message}}</h1>
-      <p class="fs-5 col-md-12">Quickly and easily get started with Bootstrap's compiled, production-ready files with
-        this barebones example featuring some basic HTML and helpful links. Download all our examples to get started.
-      </p>
 
-      <div class="mb-5">
-        <a href="#" class="btn btn-primary btn-lg px-4">Download examples</a>
+      <div class="d-flex ms-1 align-items-center pb-3 mb-5">
+        <p><span style="font-family: Parisienne-Regular ;font-size: 45px;" class="fw-bold">Syifa & Maulana </span><br> Sabtu, 29 Desember 2022  </p>
+        <p class="fs-5 col-md-8 p-3 px-3">
+          QS. Ar-Rum Ayat 21
+          <br>
+          <br><span style="float:right">
+          وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ          
+        </span><br>
+          <br>
+          <span class="">
+            Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,  
+            dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
+          </span>
+        </p>
       </div>
-
-      <hr class="col-3 col-md-2 mb-5">
-
-      <div class="row g-5">
-        <div class="col-md-6">
-          <h2>Starter projects</h2>
-          <p>Ready to beyond the starter template? Check out these open source projects that you can quickly duplicate
-            to a new GitHub repository.</p>
-          <ul class="icon-list ps-0">
-            <li class="d-flex align-items-start mb-1"><a href="#" rel="noopener" target="_blank">Bootstrap npm
-                starter</a></li>
-            <li class="d-flex align-items-start mb-1">Bootstrap Parcel starter (coming soon!)</li>
-          </ul>
-
-
-        </div>
-
-        <div class="col-md-6">
-          <h2>Guides</h2>
-          <p>Read more detailed instructions and documentation on using or contributing to Bootstrap.</p>
-          <ul class="icon-list ps-0">
-            <li class="d-flex align-items-start mb-1"><a href="/docs/5.2/getting-started/introduction/">Bootstrap quick
-                start guide</a></li>
-            <li class="d-flex align-items-start mb-1"><a href="/docs/5.2/getting-started/webpack/">Bootstrap Webpack
-                guide</a></li>
-            <li class="d-flex align-items-start mb-1"><a href="/docs/5.2/getting-started/parcel/">Bootstrap Parcel
-                guide</a></li>
-            <li class="d-flex align-items-start mb-1"><a href="/docs/5.2/getting-started/contribute/">Contributing to
-                Bootstrap</a></li>
-          </ul>
-        </div>
-      </div>
-      <img src="assets/images/flower1.png" style="width: 25vh; bottom: 2%; left:30px;" class="float animate__animated animate__zoomIn">
-      <img src="assets/images/bridge1.png" style="width: 22vh; bottom: 2%; left:50px;" class="float animate__animated animate__bounceIn">
-      <img src="assets/images/flower2.png" style="width: 42vh; top: 2%; left:50px;" class="float">
-
-    </main>
-    <footer class="pt-5 my-5 border-top">
-      Crafted With Love &middot; &copy; 2022
-
-    </footer>
+   </main>
+       
   </div>
-
+  <footer class="footer mt-auto py-3">
+      <div class="container border-top text-center">
+        Crafted With Love &middot; &copy; 2022
+      </div> 
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
@@ -139,7 +185,7 @@
     var app = new Vue({
       el: "#app",
       data: {
-        message: "Hello World!"
+        message: "Undangan Pernikahan"
       }
     })
   </script>
