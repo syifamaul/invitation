@@ -8,11 +8,10 @@
   <meta name="theme-color" content="#712cf9">
   <title>Weeding Invitation</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="assets/css/sticky-footer.css">
+
   <style>
     .icon-list li::before {
       display: block;
@@ -57,7 +56,6 @@
       z-index: -1000;
 
     }
-
 
     .divider {
       display: flex;
@@ -113,15 +111,10 @@
 
     .typewriter {
       overflow: hidden;
-      /* Ensures the content is not revealed until the animation */
       border-right: .15em solid orange;
-      /* The typwriter cursor */
       white-space: nowrap;
-      /* Keeps the content on a single line */
       margin: 0 auto;
-      /* Gives that scrolling effect as the typing happens */
       letter-spacing: .15em;
-      /* Adjust as needed */
       animation:
         typing 3.5s steps(40, end),
         blink-caret .75s step-end infinite;
@@ -153,9 +146,7 @@
   </style>
 </head>
 
-
-
-<body class="d-flex flex-column h-100 overflow-hidden">
+<body class="d-flex flex-column h-100">
   <div class="col-lg-8 mx-auto p-3 py-md-5" id="app">
     <br>
     <header class="d-flex align-items-center pb-3 mb-5">
@@ -209,24 +200,36 @@
       Crafted With Love &middot; &copy; 2022
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     console.log("Terima Kasih atas kedatangannya")
-
-    var app = new Vue({
-      el: "#app",
-      data: {
-        message: "Undangan Pernikahan"
-      },
-      methods: {
-
-      }
-    })
+    $(function () {
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Undangan Pernikahan",
+          comments: []
+        },
+        created: function () {
+          this.getDataComment();
+        },
+        methods: {
+          getDataComment: function () {
+            axios.get("http://202.127.109.25/adminweb/service_comment.php", {
+              params: {
+                mod: 'showDataComment'
+              }
+            }).then(function (response) {
+              app.comments = response.data;
+              //console.log(response);
+            });
+          }
+        }
+      });
+    });
   </script>
 </body>
 
