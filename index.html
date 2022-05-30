@@ -30,8 +30,10 @@
 
     body {
       background-image: url('assets/images/5589241.jpg');
-      background-position: center right;
-
+      /* background-position: center right; */
+      margin: 0;
+      height: 100%;
+      width: 100%;
     }
 
     html,
@@ -149,7 +151,7 @@
 <body class="d-flex flex-column h-100">
   <div class="col-lg-8 mx-auto p-3 py-md-5" id="app">
     <br>
-    <header class="d-flex align-items-center pb-3 mb-5">
+    <!-- <header class="d-flex align-items-center pb-3 mb-5  t-5">
       <div class="d-flex align-items-center mx-auto">
         <div class="row gx-5">
           <div class="hstack gap-3">
@@ -161,8 +163,19 @@
           </div>
         </div>
       </div>
-    </header>
-    <main class="" style="min-height: 100%;">
+    </header> -->
+
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Agenda</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
+        </ul>
+      </header>
+    </div>
+    <main class="">
+
       <h1 class="divider line glow fw-bold" style="font-family: Parisienne-Regular;" contenteditable>{{message}}</h1>
       <img src="assets/images/flower2.png" style="width: 42vh; top: 0%; left:0px;" class="float">
       <img src="assets/images/bridge1.png" style="width: 120px; top: 2%; left:50px; height: 134px;" class="float">
@@ -171,7 +184,7 @@
 
       <div class="d-flex ms-1 align-items-center pb-3 mb-5">
         <p>
-          <span style="font-family: Parisienne-Regular;font-size: 45px;" class="fw-bold">Syifa & Maulana </span>
+          <span style="font-family: Parisienne-Regular;font-size: 45px;" class="fw-bold t-5">Syifa & Maulana </span>
           <br>
           Sabtu, 29 Desember 2022
         </p>
@@ -184,7 +197,7 @@
           </span>
           <br>
           <br>
-          <span class="">
+          <span>
             Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
             sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
             dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat
@@ -205,7 +218,6 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
-    console.log("Terima Kasih atas kedatangannya")
     $(function () {
       var app = new Vue({
         el: "#app",
