@@ -2,297 +2,125 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#712cf9">
-  <title>Weeding Invitation</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#712cf9">
+    <title>Weeding Invitation</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        html,
+       body {
+           font-family: Sofia;
+            margin: 0%;
+            height: 100%;
+            /* background-color: bisque; */
+        }
 
-  <style>
-    .icon-list li::before {
-      display: block;
-      flex-shrink: 0;
-      width: 1.5em;
-      height: 1.5em;
-      margin-right: .5rem;
-      content: "";
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23212529' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z'/%3E%3C/svg%3E") no-repeat center center / 100% auto;
-    }
+          @font-face {
+            font-family: Parisienne-Regular;
+            src: url('assets/fonts/Parisienne-Regular.ttf');
+            }
 
-    @font-face {
-      font-family: Parisienne-Regular;
-      src: url('assets/fonts/Parisienne-Regular.ttf');
-    }
+        .float {
+            position: absolute;
+            color: #FFF;
+            text-align: center;
+            font-size: 30px;
+            z-index: -1000;
 
-    body {
-      margin: 0;
-      height: 100%;
-      width: 100%;
-      background: url(assets/images/5589241.jpg) no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
+        }
+        .nav-link:hover{
+            color: blueviolet;
+             
+        }
 
-    html,
-    body {
-      margin: 0;
-      height: 100%;
-    }
-
-    p {
-      font-family: "Sofia", sans-serif;
-    }
-
-    .text-brown {
-      color: #6d4c41;
-    }
-
-    .float {
-      position: absolute;
-      color: #FFF;
-      text-align: center;
-      font-size: 30px;
-      z-index: -1000;
-
-    }
-
-    .divider {
-      display: flex;
-    }
-
-    .divider:before,
-    .divider:after {
-      content: "";
-      flex: 1;
-    }
-
-    .line {
-      align-items: center;
-      margin: 1em -1em;
-    }
-
-    .line:before,
-    .line:after {
-      height: 2px;
-      margin: 0 1em;
-    }
-
-    a:hover {
-      color: rgb(58, 17, 37);
-      text-shadow: 2px 2px #b8b3b3;
-
-    }
-
-    .glow:before,
-    .glow:after {
-      height: 8px;
-      -webkit-filter: blur(5px);
-      border-radius: 5px;
-    }
-
-    .glow:before {
-      background: linear-gradient(to right, blue, hotpink);
-    }
-
-    .glow:after {
-      background: linear-gradient(to left, blue, hotpink);
-    }
-
-    .vr {
-      display: flex;
-      height: 100%;
-      width: 3px;
-      background: linear-gradient(to right, blue, hotpink);
-      border: 1px inset;
-      margin: 5px
-    }
-
-
-    .typewriter {
-      overflow: hidden;
-      border-right: .15em solid orange;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .15em;
-      animation:
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
-    }
-
-    /* The typing effect */
-    @keyframes typing {
-      from {
-        width: 0
-      }
-
-      to {
-        width: 100%
-      }
-    }
-
-    /* The typewriter cursor effect */
-    @keyframes blink-caret {
-
-      from,
-      to {
-        border-color: transparent
-      }
-
-      50% {
-        border-color: orange;
-      }
-    }
-
-    /* .text-responsive {
-      font-size: calc(1em + 1vh);
-    } */
-
-
-    @media (min-width: 544px) {
-      .text-responsive {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .text-responsive {
-        font-size: 2rem;
-      }
-    }
-
-    @media (min-width: 992px) {
-      .text-responsive {
-        font-size: 2.5rem;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .text-responsive {
-        font-size: 3rem;
-      }
-    }
-  </style>
+      
+    </style>
 </head>
 
 <body class="d-flex flex-column h-100">
-  <div class="col-lg-8 mx-auto p-3 py-md-5" id="app">
-    <br>
-    <!-- <header class="d-flex align-items-center pb-3 mb-5  t-5">
-      <div class="d-flex align-items-center mx-auto">
-        <div class="row gx-5">
-          <div class="hstack gap-3">
-            <a href="#" class="fw-bold text-uppercase text-decoration-none text-brown">Home</a>
-            <div class="vr"></div>
-            <a href="#" class="fw-bold text-uppercase text-decoration-none text-brown">Agenda</a>
-            <div class="vr"></div>
-            <a href="#" class="fw-bold text-uppercase text-decoration-none text-brown">Gallery</a>
-          </div>
+    <div class="main" id="app">
+        
+        <div class="px-4 py-5 my-5 text-center">
+            <div class="row ">
+                <div class="container">
+                    <nav class="navbar navbar-expand">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#"></a>
+                            <div class="collapse navbar-collapse  justify-content-center" id="navbarNavAltMarkup">
+                                <div class="navbar-nav display-20 " style="font-family:'Times New Roman', Times, serif, Helvetica, sans-serif">
+                                    <a class="nav-link fw-bold nowrap" aria-current="page" href="#">Home</a>
+                                    <a class="nav-link fw-bold nowrap" href="https://goo.gl/maps/GGAfKzPo6xUBpRhf9">Lokasi Acara</a>
+                                    <a class="nav-link fw-bold nowrap" href="#">Foto Album</a>
+                                    <a class="nav-link fw-bold nowrap" href="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <h1 class="display-3 fw-bold" style="font-family:Parisienne-Regular ;">Walimatul Ursy</h1>
+            <div class="float" style="left:0; top:0;opacity: 0.5;">
+                <img class="" src="assets/images/flower2.png" alt="" width="70%">
+            </div>
+            <div class="float" style="right:0; bottom:0; opacity: 0.5;">
+                <img class="" src="assets/images/flower1.png" alt="" width="80%">
+            </div>
+
+            <img class="d-block mx-auto mb-4" src="assets/images/bridge1.png" alt="" width="120" height="130">
+            <h3 class="display-6 fw-bold  mx-auto mb-4">Syifa & Maulana</h3>
+            
+            <p class="display-8 fw-bold  mx-auto mb-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Sabtu, 31 Desember 2022</p>
+            
+            <h3 class="display-7 fw-bold">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
+            بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</h3>
+            <div class="col-lg-6 mx-auto" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                <p class=" mb-4 display-7">Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
+                sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
+                dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat
+                tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Konfirmasi Kehadiran</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Memberikan Ucapan</button>
+                </div>
+            </div>
+
+
+            <div class="toast-container" style="right:1%; top:2%; ">
+              
+            
+                <!--Light blue variant -->
+                <div class="toast  text-dark fade show">
+                    <div class="toast-header text-dark">
+                        <strong class="me-auto"><i class="bi-gift-fill"></i> We miss you!</strong>
+                        <small>10 mins ago</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                    </div>
+                    <div class="toast-body">
+                        It's been a long time since you visited us. We've something special for you. <a href="#"
+                            class="text-dark">Click here!</a>
+                    </div>
+                </div>
+            
+            </div>
         </div>
-      </div>
-    </header> -->
-
-    <!-- <div class="container" style="margin-top:10% ;">
-      <header class="d-flex justify-content-center py-3">
-        <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Agenda</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
-        </ul>
-      </header>
-    </div> -->
-
-    <nav class="navbar navbar-expand-lg" style="margin-top:18% ">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav justify-content-center">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Pricing</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <main class="">
-      <h1 class="divider line glow fw-bold" style="font-family: Parisienne-Regular;" contenteditable>{{message}}</h1>
-      <img src="assets/images/flower2.png" style="width: 42vh; top: 0%; left:0px;" class="float">
-      <img src="assets/images/bridge1.png" style="width: 40vw; top: 2%; left:50px;" class="float">
-      <img src="assets/images/flower1.png" style="width: 150px; top: 2%; left:30px;"
-        class="float animate__animated animate__bounceIn">
-
-      <div class="row justify-content-center">
-        <div class="col-sm-6">
-          <span style="font-family: Parisienne-Regular;" class="fw-bold t-5 text-responsive">Syifa & Maulana </span>
-          <br>
-          Sabtu, 29 Desember 2022
-        </div>
-        <div class="col-sm-6">
-          <span style="font-family: Parisienne-Regular;" class="fw-bold t-5 text-responsive"></span> QS. Ar-Rum Ayat 21
-          </span>
-          <br>
-          <br><span class="fw-bold text-responsive">
-            وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
-            بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
-          </span>
-          <br>
-          <br>
-          <span style="font-family: Parisienne-Regular;" class="fw-bold text-responsive">
-            Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
-            sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
-            dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat
-            tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
-          </span>
-        </div>
-      </div>
-
-    </main>
-
-  </div>
-  <footer class="footer mt-auto py-3">
-    <div class="container border-top text-center">
-      Crafted With Love &middot; &copy; 2022
     </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script>
-    $(function () {
-      var app = new Vue({
-        el: "#app",
-        data: {
-          message: "Undangan Pernikahan",
-          comments: []
-        },
-        created: function () {
-          this.getDataComment();
-        },
-        methods: {
-          getDataComment: function () {
-            axios.get("http://202.127.109.25/adminweb/service_comment.php", {
-              params: {
-                mod: 'showDataComment'
-              }
-            }).then(function (response) {
-              app.comments = response.data;
-              console.log(response);
-            });
-          }
-        }
-      });
-    });
-  </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        $(function () {
+            
+        })
+    </script>
 </body>
 
 </html>
