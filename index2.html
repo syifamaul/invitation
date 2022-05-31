@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         html,
-        #app {
+       body {
+           font-family: Sofia;
             margin: 0%;
             height: 100%;
+            /* background-color: bisque; */
         }
 
         .float {
@@ -30,17 +32,28 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-    <div class="main row" id="app">
-        <div class="col-sm-8 col-lg-8 justify-content-center">
-            <div class="float">
-                <img class="" src="assets/images/flower2.png" style="width:56vh;top: 0%; left:0px;">
+    <div class="main" id="app">
+        <div class="px-4 py-5 my-5 text-center">
+            <h1 class="display-3 fw-bold">Walimatul Ursy</h1>
+            <div class="float" style="left:0; top:0;opacity: 0.5;">
+                <img class="" src="assets/images/flower2.png" alt="" width="60%">
             </div>
-            <div style="margin-top: 40%;">
-                mt-30
+            <img class="d-block mx-auto mb-4" src="assets/images/bridge1.png" alt="" width="120" height="130">
+            <div class="float" style="right:0; bottom:0; opacity: 0.5;">
+                 <img class="" src="assets/images/flower1.png" alt="" width="80%">
             </div>
-        </div>
-        <div class="col-sm-4 col-lg-4"
-            style="background-image:url(assets/images/5589241.jpg); background-position:left top">
+            <h3 class="display-8 fw-bold">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
+            بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</h3>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
+                sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
+                dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat
+                tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Lihat Lokasi</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Tulis Ucapan</button>
+                </div>
+            </div>
         </div>
     </div>
 
