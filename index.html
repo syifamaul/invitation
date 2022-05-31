@@ -29,11 +29,14 @@
     }
 
     body {
-      background-image: url('assets/images/5589241.jpg');
-      /* background-position: center right; */
       margin: 0;
       height: 100%;
       width: 100%;
+      background: url(assets/images/5589241.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
     }
 
     html,
@@ -145,6 +148,35 @@
         border-color: orange;
       }
     }
+
+    /* .text-responsive {
+      font-size: calc(1em + 1vh);
+    } */
+
+
+    @media (min-width: 544px) {
+      .text-responsive {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .text-responsive {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .text-responsive {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .text-responsive {
+        font-size: 3rem;
+      }
+    }
   </style>
 </head>
 
@@ -165,24 +197,63 @@
       </div>
     </header> -->
 
-    <div class="container">
+    <div class="container" style="margin-top:10% ;">
       <header class="d-flex justify-content-center py-3">
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Agenda</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
         </ul>
       </header>
     </div>
-    <main class="">
 
+    <!-- <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav justify-content-center">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Pricing</a>
+          </div>
+        </div>
+      </div>
+    </nav> -->
+    <main class="">
       <h1 class="divider line glow fw-bold" style="font-family: Parisienne-Regular;" contenteditable>{{message}}</h1>
-      <img src="assets/images/flower2.png" style="width: 42vh; top: 0%; left:0px;" class="float">
-      <img src="assets/images/bridge1.png" style="width: 120px; top: 2%; left:50px; height: 134px;" class="float">
+      <img src="assets/images/bridge1.png" style="width: 40vw; top: 2%; left:50px; height: 134px;" class="float">
       <img src="assets/images/flower1.png" style="width: 150px; top: 2%; left:30px;"
         class="float animate__animated animate__bounceIn">
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <span style="font-family: Parisienne-Regular;" class="fw-bold t-5 text-responsive">Syifa & Maulana </span>
+          <br>
+          Sabtu, 29 Desember 2022
+        </div>
+        <div class="col-4">
+          <span style="font-family: Parisienne-Regular;" class="fw-bold t-5 text-responsive"></span> QS. Ar-Rum Ayat 21
+          </span>
+          <br>
+          <br><span class="fw-bold text-responsive">
+            وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
+            بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
+          </span>
+          <br>
+          <br>
+          <span style="font-family: Parisienne-Regular;" class="fw-bold text-responsive">
+            Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
+            sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
+            dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat
+            tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
+          </span>
+        </div>
+      </div>
 
-      <div class="d-flex ms-1 align-items-center pb-3 mb-5">
+      <!-- <div class="d-flex ms-1 align-items-center pb-3 mb-5">
         <p>
           <span style="font-family: Parisienne-Regular;font-size: 45px;" class="fw-bold t-5">Syifa & Maulana </span>
           <br>
@@ -204,7 +275,7 @@
             tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
           </span>
         </p>
-      </div>
+      </div> -->
     </main>
 
   </div>
