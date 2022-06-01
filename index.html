@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
-        html,
+       html,
        body {
            font-family: Sofia;
             margin: 0%;
             height: 100%;
-            /* background-color: bisque; */
+             
         }
 
           @font-face {
@@ -30,8 +30,7 @@
             color: #FFF;
             text-align: center;
             font-size: 30px;
-            z-index: -1000;
-
+            z-index: 2; 
         }
         .nav-link:hover{
             color: blueviolet;
@@ -43,19 +42,22 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-    <div class="main" id="app">
-        
-        <div class="px-4 py-3 text-center">
-
-
+    <div class="main" id="app" style="background-image:url(assets/images/BACKGROUND_LEAVES_WATERCOLOR-01.jpg)">
+        <div class="float" style="left:0; top:0;opacity: 0.5;">
+            <img class="" src="assets/images/flower2.png" alt="" width="70%">
+        </div>
+        <div class="float" style="right:0; bottom:0; opacity: 0.5;">
+            <img class="" src="assets/images/flower1.png" alt="" width="70%">
+        </div>
+       
+        <div class="px-4 py-3 text-center  sticky-top">
             <div class="row ">
-
                 <div class="container">
                     <nav class="navbar navbar-expand">
                         <div class="container-fluid">
                             <a class="navbar-brand" href="#"></a>
                             <div class="collapse navbar-collapse  justify-content-center" id="navbarNavAltMarkup">
-                                <div class="navbar-nav display-20 "
+                                <div class="navbar-nav display-20"
                                     style="font-family:'Times New Roman', Times, serif, Helvetica, sans-serif">
                                     <a class="nav-link fw-bold nowrap" aria-current="page" href="#">Home</a>
                                     <a class="nav-link fw-bold nowrap" href="https://goo.gl/maps/GGAfKzPo6xUBpRhf9">Lokasi</a>
@@ -69,13 +71,8 @@
             </div>
 
             <h1 class="display-4 fw-bold" style="font-family:Parisienne-Regular ;">Walimatul Ursy</h1>
-            <div class="float" style="left:0; top:0;opacity: 0.5;">
-                <img class="" src="assets/images/flower2.png" alt="" width="70%">
-            </div>
-            <div class="float" style="right:0; bottom:0; opacity: 0.5;">
-                <img class="" src="assets/images/flower1.png" alt="" width="80%">
-            </div>
-            <img class="d-block mx-auto mb-2" src="assets/images/bridge1.png" alt="" width="120" height="130">
+             <img class="d-block mx-auto mb-2" src="assets/images/bridge1.png" alt="" width="120" height="130">
+          
             <h3 class="display-7 fw-bold  mx-auto mb-2">Syifa & Maulana</h3>
             
             <p class="display-8 fw-bold  mx-auto mb-2" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Sabtu, 31 Desember 2022</p>
@@ -84,57 +81,93 @@
            
             <h3 class="display-7 fw-bold">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
             بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</h3>
-            <div class="col-lg-6 mx-auto" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                <p class=" mb-4 display-7">Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
+            <div class="col-lg-6 mx-auto  mb-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                <p class=" mb-4 display-7">" Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
                 sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
                 dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat
-                tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                tanda-tanda (kebesaran Allah) bagi kaum yang berpikir. "</p>
+                
+            </div>
+
+            <div class="mb-4 py-3 mb-4 container sticky-top">
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center  mb-4">
                     <button type="button" class="btn btn-primary btn-lg px-4 gap-3" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Konfirmasi Kehadiran </button>
                     <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Memberikan Ucapan</button> -->
                 </div>
-            </div>
-
-            <div class="mb-4 py-3">
-                <div class="d-grid d-sm-flex justify-content-sm-center" style="  overflow-x: hidden;overflow: auto; min-height: 300px;">
-                    div.scroll {
-                    margin:4px, 4px;
-                    padding:4px;
-                    background-color: green;
-                    width: 500px;
-                    height: 110px;
-                    overflow-x: hidden;
-                    overflow-y: auto;
-                    text-align:justify;
-                    }div.scroll {
-                    margin:4px, 4px;
-                    padding:4px;
-                    background-color: green;
-                    width: 500px;
-                    height: 110px;
-                    overflow-x: hidden;
-                    overflow-y: auto;
-                    text-align:justify;
-                    }div.scroll {
-                    margin:4px, 4px;
-                    padding:4px;
-                    background-color: green;
-                    width: 500px;
-                    height: 110px;
-                    overflow-x: hidden;
-                    overflow-y: auto;
-                    text-align:justify;
-                    }div.scroll {
-                    margin:4px, 4px;
-                    padding:4px;
-                    background-color: green;
-                    width: 500px;
-                    height: 110px;
-                    overflow-x: hidden;
-                    overflow-y: auto;
-                    text-align:justify;
-                    }
-
+                <h4 class="display-7 fw-bold mb-4">Kirim Ucapan & Doa</h4>
+                <div class="row">
+                    <div class="col-lg-6  mb-4">
+                        <div class="card" style="width: auto">
+                            <div class="card-body">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control input-sm" id="floatingInput" placeholder="name@example.com">
+                                    <label for="floatingInput">Email address</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input type="password" class="form-control input-sm" id="floatingPassword" placeholder="Password">
+                                    <label for="floatingPassword">Password</label>
+                                  </div>
+                                  <div class="mb-3">
+                                      <button class="btn btn-primary">Kirim</button>
+                                      <button class="btn btn-secondary">Batal</button>
+                                  </div>
+                                </div>
+                          </div>
+                        
+                    </div>
+                    <div class="col-lg-6 mb-4" style="overflow: auto; height:350px;">
+                        <div class="list-group gap-2">
+                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading</h5>
+                                <small>3 days ago</small>
+                              </div>
+                              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                              <small>Donec id elit non mi porta.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading</h5>
+                                <small class="text-muted">3 days ago</small>
+                              </div>
+                              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                              <small class="text-muted">Donec id elit non mi porta.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading</h5>
+                                <small class="text-muted">3 days ago</small>
+                              </div>
+                              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                              <small class="text-muted">Donec id elit non mi porta.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                  <h5 class="mb-1">List group item heading</h5>
+                                  <small>3 days ago</small>
+                                </div>
+                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                <small>Donec id elit non mi porta.</small>
+                              </a>
+                              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                  <h5 class="mb-1">List group item heading</h5>
+                                  <small class="text-muted">3 days ago</small>
+                                </div>
+                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                <small class="text-muted">Donec id elit non mi porta.</small>
+                              </a>
+                              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                  <h5 class="mb-1">List group item heading</h5>
+                                  <small class="text-muted">3 days ago</small>
+                                </div>
+                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                <small class="text-muted">Donec id elit non mi porta.</small>
+                              </a>
+                          </div>
+                </div>
+                
                 </div>
                 
             </div>
