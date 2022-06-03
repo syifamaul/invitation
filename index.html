@@ -30,12 +30,12 @@
             font-family: billy-signature;
             src: url('assets/fonts/billy_signature.342ac43.ttf');
         }
-       
+
         @font-face {
             font-family: slim_summer;
             src: url('assets/fonts/slim_summer.otf');
         }
-        
+
         .float {
             position: absolute;
             color: #FFF;
@@ -162,10 +162,10 @@
             display: none;
         }
 
-        .text-outline{
+        .text-outline {
             -webkit-text-fill-color: white;
             -webkit-text-stroke-width: 0.3px;
-             -webkit-text-stroke-color: rgb(255, 128, 9);
+            -webkit-text-stroke-color: rgb(255, 128, 9);
             text-shadow: 2px 2px #0f0f0f;
         }
 
@@ -178,72 +178,83 @@
             padding: 1rem 2rem;
             outline: 2;
             border-radius: 0.25rem;
-            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); /* black with 30% opacity */
+            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+            /* black with 30% opacity */
             cursor: pointer;
         }
 
         span.ripple {
             position: absolute;
-            
+
             transform: scale(0);
             animation: ripple 600ms linear;
             background-color: rgba(255, 255, 255, 0.7);
         }
 
         @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
 
 
-        .btn-float{
+        .btn-float {
             z-index: 10000;
-            position:fixed;
-            width:60px;
-            height:60px;
-            background-color: rgba(5, 114, 54, 0.8);  
-            color:#0f0f0f;
-            border-radius:50px;
-            text-align:center;
-            outline:25px;
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(5, 114, 54, 0.8);
+            color: #0f0f0f;
+            border-radius: 50px;
+            text-align: center;
+            outline: 25px;
             outline-color: #0f0f0f;
         }
 
-        .btn-float:hover{
+        .btn-float:hover {
             color: black;
             background-color: rgba(255, 128, 9, 0.9);
 
         }
-
-      
-
     </style>
 </head>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 99999999999;  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    style="z-index: 99999999999;  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"">
+    <div class=" modal-dialog modal-dialog-centered">
+    <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Amplop Digital</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="exampleModalLabel">Amplop Digital</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             Direct Transfer Transfer langsung ke rekening yang tertera
             Transfer langsung ke rekening di bawah ini:
-                <hr>
-                <ul><li>CIMB</li> 
+            <hr>
+            <ul>
+                <li>CIMB</li>
                 <li data-v-07955435=""><b data-v-07955435="">703864615800</b>
-                  <a data-v-07955435="" data-clipboard-text="703864615800" href="#" target="_self" class="clip-btn copy-clipboard">
-                <svg data-v-07955435="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="files" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-files b-icon bi"><g data-v-07955435=""><path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"></path></g></svg></a>
-            </li> 
-                <li data-v-07955435="">a/n Achmad Maulana</li></ul>
+                    <a data-v-07955435="" data-clipboard-text="703864615800" href="#" target="_self"
+                        class="clip-btn copy-clipboard">
+                        <svg data-v-07955435="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false"
+                            role="img" aria-label="files" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            class="bi-files b-icon bi">
+                            <g data-v-07955435="">
+                                <path
+                                    d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z">
+                                </path>
+                            </g>
+                        </svg></a>
+                </li>
+                <li data-v-07955435="">a/n Achmad Maulana</li>
+            </ul>
         </div>
-        
-      </div>
+
     </div>
-  </div>
+</div>
+</div>
+
 <body class="d-flex flex-column h-100">
     <div class="main" id="app" style="background-image:url(assets/images/5388786.jpg);background-position: center;
     background-repeat: no-repeat;
@@ -254,33 +265,30 @@
         <div class="float" style="right:0; bottom:0; opacity: 0.5; ">
             <img class="" src="assets/images/flower1.png" alt="" width="60%">
         </div>
-        <a  class="btn-float" style="cursor:pointer ; top:30%;  right:2%;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <a class="btn-float" style="cursor:pointer ; top:30%;  right:2%;" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
             <img src="assets/images/pay_money.18b5b10.svg" style="color:#fff; fill: #fff; width: 60%;margin-top: 12px;">
-       </a>
-       <a  class="btn-float" style="cursor:pointer ;  top:40%;  right:2%;      " >
-        <i class="fa fa-group" style="margin-top: 22px;"></i>
-   </a>
+        </a>
+        <a class="btn-float" style="cursor:pointer ;  top:40%;  right:2%;      ">
+            <i class="fa fa-group" style="margin-top: 22px;"></i>
+        </a>
         <div class="px-4 py-3 text-center">
-            <div class="row ">
-                <div class="container">
-                    <nav class="navbar navbar-expand  sticky-top">
-                        <div class="container-fluid">
-                            <a class="navbar-brand" href="#"></a>
-                            <div class="collapse navbar-collapse  justify-content-center" id="navbarNavAltMarkup">
-                                <div class="navbar-nav display-4"
-                                    style="">
-                                    <a class="nav-link fw-bold nowrap scrollLink" aria-current="page"
-                                        href="#home"><u>Home</u></a>
-                                    <a class="nav-link fw-bold nowrap"
-                                        href="https://goo.gl/maps/GGAfKzPo6xUBpRhf9"><u>Lokasi</u></a>
-                                    <a class="nav-link fw-bold nowrap scrollLink " href="#sec-gallery"><u>Album</u></a>
-                                    <a class="nav-link fw-bold nowrap" href="#"></a>
-                                </div>
-                            </div>
+            <nav class="navbar navbar-expand">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <div class="collapse navbar-collapse   justify-content-center" id="navbarNavAltMarkup">
+                        <div class="navbar-nav display-5" style="">
+                            <a class="nav-link fw-bold nowrap scrollLink" aria-current="page"
+                                href="#home"><u>Home</u></a>
+                            <a class="nav-link fw-bold nowrap"
+                                href="https://goo.gl/maps/GGAfKzPo6xUBpRhf9"><u>Lokasi</u></a>
+                            <a class="nav-link fw-bold nowrap scrollLink " href="#sec-gallery"><u>Album</u></a>
+                            <a class="nav-link fw-bold nowrap" href="#"></a>
                         </div>
-                    </nav>
+                    </div>
                 </div>
-            </div>
+            </nav>
+
             <section id="sec-home" style="margin-top:5%;">
                 <h1 class="display-3 fw-bold" style="font-family: Parisienne-Regular;">Walimatul Ursy</h1>
                 <img class="d-block mx-auto mb-2" src="assets/images/bridge1.png" alt="" width="120" height="130">
@@ -311,7 +319,7 @@
                     <button type="button" class="btn-round"
                         style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Konfirmasi Kehadiran
                     </button>
-                 </div>
+                </div>
             </section>
 
 
@@ -343,7 +351,7 @@
 
                         </div>
                         <div class="col-lg-6 mb-4" style="overflow: auto; height:350px;">
-                            <div class="list-group gap-2 mb-4" style="opacity: 0.8;">
+                            <div class="list-group gap-2 mb-4" style="opacity: 0.8;" id="wish">
                                 <a href="#"
                                     class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between">
@@ -423,7 +431,7 @@
                         <div class="container">
                             <h2 class="display-7 fw-bold mb-4 text-warning text-outline">
                                 Our Gallery</h2>
-                            <section class="customer-logos slider">
+                            <section class="syifa-maul slider">
                                 <div class="slide"><img style="width:100px;height: 100px;border-radius:50% ;"
                                         src="assets/images/1.PNG">
                                 </div>
@@ -431,21 +439,21 @@
                                         src="assets/images/7.PNG"></div>
                                 <div class="slide"><img style="width:100px;height: 100px;border-radius:50% ;"
                                         src="assets/images/2.PNG"></div>
-                              
+
                                 <div class="slide"><img style="width:100px;height: 100px;border-radius:50% ;"
                                         src="assets/images/4.PNG">
                                 </div>
-                               <div class="slide"><img style="width:100px;border-radius:50% ;"
-                                src="assets/images/1.PNG">
-                        </div>
-                        <div class="slide"><img style=" width:100px;height: 100px; border-radius:50% ;"
-                                src="assets/images/7.PNG"></div>
-                        <div class="slide"><img style="width:100px;height: 100px;border-radius:50% ;"
-                                src="assets/images/2.PNG"></div>
-                      
-                        <div class="slide"><img style="width:100px;height: 100px;border-radius:50% ;"
-                                src="assets/images/6.PNG">
-                        </div>
+                                <div class="slide"><img style="width:100px;border-radius:50% ;"
+                                        src="assets/images/1.PNG">
+                                </div>
+                                <div class="slide"><img style=" width:100px;height: 100px; border-radius:50% ;"
+                                        src="assets/images/7.PNG"></div>
+                                <div class="slide"><img style="width:100px;height: 100px;border-radius:50% ;"
+                                        src="assets/images/2.PNG"></div>
+
+                                <div class="slide"><img style="width:100px;height: 100px;border-radius:50% ;"
+                                        src="assets/images/6.PNG">
+                                </div>
                             </section>
 
                         </div>
@@ -455,8 +463,6 @@
             </div>
 
             <div class="toast-container" style="right:1%; top:2%; ">
-
-
                 <!--Light blue variant -->
                 <div class="toast  text-dark fade show">
                     <div class="toast-header text-dark">
@@ -486,14 +492,13 @@
     <script>
         $(function () {
 
-            $('.copy-clipboard').click(function()
-            {
-                
+            $('.copy-clipboard').click(function () {
+
                 navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
-                alert('Copied the text: '+ $(this).attr('data-clipboard-text'))
+                alert('Copied the text: ' + $(this).attr('data-clipboard-text'))
             });
 
-            $('.customer-logos').slick({
+            $('.syifa-maul').slick({
                 slidesToShow: 6,
                 slidesToScroll: 1,
                 autoplay: true,
@@ -515,6 +520,8 @@
             });
 
 
+
+
             $("a.scrollLink").click(function (event) {
                 event.preventDefault();
                 $("html, body").animate({
@@ -526,101 +533,101 @@
         })
 
         class Button {
-  constructor(HTMLButtonElement) {
-    this.button = HTMLButtonElement;
-    this.width = this.button.offsetWidth;
-    this.height = this.button.offsetHeight;
-    this.left = this.button.offsetLeft;
-    this.top = this.button.offsetTop;
-    this.x = 0;
-    this.y = 0;
-    this.cursorX = 0;
-    this.cursorY = 0;
-    this.magneticPullX = 0.4;
-    this.magneticPullY = 0.9;
-    this.isHovering = false;
-    this.magnetise();
-    this.createRipple();
-  }
+            constructor(HTMLButtonElement) {
+                this.button = HTMLButtonElement;
+                this.width = this.button.offsetWidth;
+                this.height = this.button.offsetHeight;
+                this.left = this.button.offsetLeft;
+                this.top = this.button.offsetTop;
+                this.x = 0;
+                this.y = 0;
+                this.cursorX = 0;
+                this.cursorY = 0;
+                this.magneticPullX = 0.4;
+                this.magneticPullY = 0.9;
+                this.isHovering = false;
+                this.magnetise();
+                this.createRipple();
+            }
 
-//   onEnter = () => {
-//     gsap.to(this.button, 0.4, {
-//       x: this.x * this.magneticPullX,
-//       y: this.y * this.magneticPullY,
-//       ease: Power4.easeOut
-//     });
-//   };
+            //   onEnter = () => {
+            //     gsap.to(this.button, 0.4, {
+            //       x: this.x * this.magneticPullX,
+            //       y: this.y * this.magneticPullY,
+            //       ease: Power4.easeOut
+            //     });
+            //   };
 
-//   onLeave = () => {
-//     gsap.to(this.button, 0.7, {
-//       x: 0,
-//       y: 0,
-//       ease: Elastic.easeOut.config(1.1, 0.5)
-//     });
-//   };
+            //   onLeave = () => {
+            //     gsap.to(this.button, 0.7, {
+            //       x: 0,
+            //       y: 0,
+            //       ease: Elastic.easeOut.config(1.1, 0.5)
+            //     });
+            //   };
 
-  magnetise = () => {
-    document.querySelector("body").addEventListener("mousemove", (e) => {
-      this.cursorX = e.clientX;
-      this.cursorY = e.clientY;
+            magnetise = () => {
+                document.querySelector("body").addEventListener("mousemove", (e) => {
+                    this.cursorX = e.clientX;
+                    this.cursorY = e.clientY;
 
-      const center = {
-        x: this.left + this.width / 2,
-        y: this.top + this.height / 2
-      };
+                    const center = {
+                        x: this.left + this.width / 2,
+                        y: this.top + this.height / 2
+                    };
 
-      this.x = this.cursorX - center.x;
-      this.y = this.cursorY - center.y;
+                    this.x = this.cursorX - center.x;
+                    this.y = this.cursorY - center.y;
 
-      const distance = Math.sqrt(this.x * this.x + this.y * this.y);
-      const hoverArea = this.isHovering ? 0.6 : 0.5;
+                    const distance = Math.sqrt(this.x * this.x + this.y * this.y);
+                    const hoverArea = this.isHovering ? 0.6 : 0.5;
 
-    //   if (distance < this.width * hoverArea) {
-    //     if (!this.isHovering) {
-    //       this.isHovering = true;
-    //     }
-    //     this.onEnter();
-    //   } else {
-    //     if (this.isHovering) {
-    //       this.onLeave();
-    //       this.isHovering = false;
-    //     }
-    //   }
-    });
-  };
+                    //   if (distance < this.width * hoverArea) {
+                    //     if (!this.isHovering) {
+                    //       this.isHovering = true;
+                    //     }
+                    //     this.onEnter();
+                    //   } else {
+                    //     if (this.isHovering) {
+                    //       this.onLeave();
+                    //       this.isHovering = false;
+                    //     }
+                    //   }
+                });
+            };
 
-  createRipple = () => {
-    this.button.addEventListener("click", () => {
-      const circle = document.createElement("span");
-      const diameter = Math.max(
-        this.button.clientWidth,
-        this.button.clientHeight
-      );
-      const radius = diameter / 2;
+            createRipple = () => {
+                this.button.addEventListener("click", () => {
+                    const circle = document.createElement("span");
+                    const diameter = Math.max(
+                        this.button.clientWidth,
+                        this.button.clientHeight
+                    );
+                    const radius = diameter / 2;
 
-      const offsetLeft = this.left + this.x * this.magneticPullX;
-      const offsetTop = this.top + this.y * this.magneticPullY;
+                    const offsetLeft = this.left + this.x * this.magneticPullX;
+                    const offsetTop = this.top + this.y * this.magneticPullY;
 
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${this.cursorX - offsetLeft - radius}px`;
-      circle.style.top = `${this.cursorY - offsetTop - radius}px`;
-      circle.classList.add("ripple");
+                    circle.style.width = circle.style.height = `${diameter}px`;
+                    circle.style.left = `${this.cursorX - offsetLeft - radius}px`;
+                    circle.style.top = `${this.cursorY - offsetTop - radius}px`;
+                    circle.classList.add("ripple");
 
-      const ripple = this.button.getElementsByClassName("ripple")[0];
+                    const ripple = this.button.getElementsByClassName("ripple")[0];
 
-      if (ripple) {
-        ripple.remove();
-      }
+                    if (ripple) {
+                        ripple.remove();
+                    }
 
-      this.button.appendChild(circle);
-    });
-  };
-}
+                    this.button.appendChild(circle);
+                });
+            };
+        }
 
-const buttons = document.getElementsByTagName("button");
-for (const button of buttons) {
-  new Button(button);
-}
+        const buttons = document.getElementsByTagName("button");
+        for (const button of buttons) {
+            new Button(button);
+        }
     </script>
 </body>
 
