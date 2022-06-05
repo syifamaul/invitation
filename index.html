@@ -316,8 +316,10 @@
 
 
 
-    <a class="btn-float" style="cursor:pointer ; top:30%;  right:2%;" data-bs-toggle="modal"
-        data-bs-target="#modal-amplop-digital">
+    <a class="btn-float example-popover" tabindex="0"  role="button"  style="cursor:pointer ; top:30%;  right:2%;" data-bs-toggle="modal"  
+    data-bs-placement="left"
+    data-bs-custom-class="custom-popover" data-bs-trigger="hover focus"
+    data-bs-content="Amplop Digital" data-bs-target="#modal-amplop-digital">
         <img src="assets/images/pay_money.18b5b10.svg" style="color:#fff; fill: #fff; width: 60%;margin-top: 12px;">
     </a>
     <a class="btn-float" style="cursor:pointer ;  top:40%;  right:2%;">
@@ -583,12 +585,20 @@
 
     <script>
         $(function () {
+             
+
+            const popover = new bootstrap.Popover('.example-popover', {
+                container: 'body'
+                }).show();
+
 
             $('.copy-clipboard').click(function () {
 
                 navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
                 alert('Copied the text: ' + $(this).attr('data-clipboard-text'))
             });
+
+             
 
             $('.syifa-maul').slick({
                 slidesToShow: 6,
