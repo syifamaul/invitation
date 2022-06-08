@@ -557,7 +557,7 @@
                                 params: {
                                     mod: 'SHOWCOMMENTS'
                                 },
-                                httpsAgent: new https.Agent({ rejectUnauthorized: false }),
+                                NODE_TLS_REJECT_UNAUTHORIZED: '0',
 
                             },
 
