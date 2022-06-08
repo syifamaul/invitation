@@ -542,6 +542,17 @@
         $(function () {
 
             var url = "http://202.127.109.25/adminweb/service_comment.php";
+            var data = new FormData();
+                        data.append('mod', 'SHOWCOMMENTS');
+            $.ajax({
+                url : url,
+                type : "POST",
+                data : data,
+                success : function(response)
+                {
+                    console.log(response)
+                }
+            })
 
             var app = new Vue({
                 el: '#app',
@@ -549,7 +560,7 @@
                     comments: [],
                 },
                 created: function () {
-                    this.showData()
+                   // this.showData()
                 },
                 updated: function () {
 
