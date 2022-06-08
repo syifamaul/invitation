@@ -532,6 +532,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
+        integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"
+        crossorigin="anonymous"></script>
 
     <script>
         $(function () {
@@ -550,23 +553,35 @@
 
                 },
                 methods: {
+
+
                     showData: function () {
-                        axios.get(url,
+                        var data = new FormData();
+                        data.append('mod', 'SHOWCOMMENTS');
 
-                            {
-                                params: {
-                                    mod: 'SHOWCOMMENTS'
-                                },
-                                NODE_TLS_REJECT_UNAUTHORIZED: '0',
 
-                            },
 
-                        )
-                            .then(function (response) {
-                                app.comments = response.data;
-                                console.log(response.data)
+                        // var config = {
+                        //     method: 'post',
+                        //     url: 'http://202.127.109.25/adminweb/service_comment.php',
+                        //     headers: {
+                        //         'Content-Type': 'application/json;charset=UTF-8',
+                        //         "Access-Control-Allow-Origin": "*",
+                        //     },
+                        //     data: { mod: 'SHOWCOMMENTS' }
+                        // };
 
-                            })
+                        // axios(config)
+                        axios.post('http://202.127.109.25/adminweb/service_comment.php', data, {
+
+                            'Content-Type': 'application/json;charset=UTF-8',
+                            "Access-Control-Allow-Origin": "*"
+                        }).then(function (response) {
+                            app.comments = response.data;
+                            console.log(response.data)
+
+
+                        })
                             .catch(function (error) {
                                 console.log(error);
                             });
@@ -632,19 +647,19 @@
             }
 
             onEnter = () => {
-                gsap.to(this.button, 0.4, {
-                    x: this.x * this.magneticPullX,
-                    y: this.y * this.magneticPullY,
-                    ease: Power4.easeOut
-                });
+                // gsap.to(this.button, 0.4, {
+                //     x: this.x * this.magneticPullX,
+                //     y: this.y * this.magneticPullY,
+                //     ease: Power4.easeOut
+                // });
             };
 
             onLeave = () => {
-                gsap.to(this.button, 0.5, {
-                    x: 0,
-                    y: 0,
-                    ease: Elastic.easeOut.config(1.1, 0.5)
-                });
+                // gsap.to(this.button, 0.5, {
+                //     x: 0,
+                //     y: 0,
+                //     ease: Elastic.easeOut.config(1.1, 0.5)
+                // });
             };
 
             magnetise = () => {
