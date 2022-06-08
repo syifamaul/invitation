@@ -427,7 +427,7 @@
                             <div class="list-group gap-2 mb-4" style="opacity: 0.8;" id="wish"
                                 v-for="(item, index) in comments">
                                 <a href="#" style="background-image: url(assets/images/5589241.jpg);"
-                                    class="list-group-item list-group-item-action flex-column align-items-start">
+                                    class="list-group-item list-group-item-action flex-column align-items-start animate__animated animate__fadeInDown">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="mb-1">{{item.fromName}}</h5>
                                         <small>{{item.tanggal}}</small>
@@ -541,7 +541,7 @@
     <script>
         $(function () {
 
-            var url = "http://202.127.109.25/adminweb/service_comment.php";
+            var url = "https://sta3.dnr.id/maul/whatsapp-api/helpers/service_comment.php";
             var data = new FormData();
                         data.append('mod', 'SHOWCOMMENTS');
             $.ajax({
@@ -585,7 +585,7 @@
                         // };
 
                         // axios(config)
-                        axios.get('http://202.127.109.25/adminweb/service_comment.php', {
+                        axios.get(url, {
                                 params : {
                                     mod : 'SHOWCOMMENTS'
                                 }
