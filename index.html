@@ -242,7 +242,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-6">
                         <ul>
-                            <li>CIMB</li>
+                            <li>MANDIRI</li>
                             <li><b>703864615800</b>
                                 <a data-clipboard-text="703864615800" href="#" target="_self" class="clip-btn copy-clipboard">
                                     <svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img"
@@ -483,7 +483,7 @@
                                         <label for="comment">Pesan</label>
                                     </div>
                                     <div class="mb-3">
-                                        <button class="btn btn-primary">Kirim</button>
+                                        <button class="btn btn-primary" @click="submitForm()">Kirim</button>
                                         <button class="btn btn-secondary">Batal</button>
                                     </div>
                                 </div>
@@ -573,17 +573,17 @@
         $(function () {
 
             var url = "https://sta3.dnr.id/maul/whatsapp-api/helpers/service_comment.php";
-            var data = new FormData();
-                        data.append('mod', 'SHOWCOMMENTS');
-            $.ajax({
-                url : url,
-                type : "GET",
-                data : {mod : 'SHOWCOMMENTS' },
-                success : function(response)
-                {
-                    console.log(response)
-                }
-            })
+            // var data = new FormData();
+            //             data.append('mod', 'SHOWCOMMENTS');
+            // $.ajax({
+            //     url : url,
+            //     type : "GET",
+            //     data : {mod : 'SHOWCOMMENTS' },
+            //     success : function(response)
+            //     {
+            //         console.log(response)
+            //     }
+            // })
 
             var app = new Vue({
                 el: '#app',
@@ -598,24 +598,31 @@
                 },
                 methods: {
 
+                    submitForm : function()
+                    {
+                        var data = new FormData();
+                        data.append('mod', 'ADDCOMMENT');
+                        data.append('nama', $('#nama').val());
+                        data.append('comment', $('#comment').val());
+                        data.append('telepon', $('#telepon').val());
+                         axios.post(url,  data ,
+                            { 
+                                headers : {
+                                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                            }
+                        }).then(function (response) {
+                            console.log(response.data)
+                            app.showData()
 
+                        })
+                            .catch(function (error) {
+                                console.log(error);
+                            });
+
+                    },
                     showData: function () {
                         var data = new FormData();
                         data.append('mod', 'SHOWCOMMENTS');
-
-
-
-                        // var config = {
-                        //     method: 'post',
-                        //     url: 'http://202.127.109.25/adminweb/service_comment.php',
-                        //     headers: {
-                        //         'Content-Type': 'application/json;charset=UTF-8',
-                        //         "Access-Control-Allow-Origin": "*",
-                        //     },
-                        //     data: { mod: 'SHOWCOMMENTS' }
-                        // };
-
-                        // axios(config)
                         axios.get(url, {
                                 params : {
                                     mod : 'SHOWCOMMENTS'
