@@ -552,11 +552,16 @@
                 methods: {
                     showData: function () {
                         axios.get(url,
+
                             {
                                 params: {
                                     mod: 'SHOWCOMMENTS'
-                                }
-                            })
+                                },
+                                httpsAgent: new https.Agent({ rejectUnauthorized: false }),
+
+                            },
+
+                        )
                             .then(function (response) {
                                 app.comments = response.data;
                                 console.log(response.data)
