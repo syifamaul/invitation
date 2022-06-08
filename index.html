@@ -585,11 +585,11 @@
                         // };
 
                         // axios(config)
-                        axios.post('http://202.127.109.25/adminweb/service_comment.php', data, {
-
-                            'Content-Type': 'application/json;charset=UTF-8',
-                            "Access-Control-Allow-Origin": "*"
-                        }).then(function (response) {
+                        axios.get('http://202.127.109.25/adminweb/service_comment.php', {
+                                params : {
+                                    mod : 'SHOWCOMMENTS'
+                                }
+                        } ).then(function (response) {
                             app.comments = response.data;
                             console.log(response.data)
 
