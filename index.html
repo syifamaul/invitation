@@ -244,7 +244,8 @@
                         <ul>
                             <li>MANDIRI</li>
                             <li><b>703864615800</b>
-                                <a data-clipboard-text="703864615800" href="#" target="_self" class="clip-btn copy-clipboard">
+                                <a data-clipboard-text="703864615800" href="#" target="_self"
+                                    class="clip-btn copy-clipboard">
                                     <svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img"
                                         aria-label="files" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                         class="bi-files b-icon bi">
@@ -262,7 +263,8 @@
                         <ul>
                             <li>CIMB</li>
                             <li><b>703864615800</b>
-                                <a data-clipboard-text="703864615800" href="#" target="_self" class="clip-btn copy-clipboard">
+                                <a data-clipboard-text="703864615800" href="#" target="_self"
+                                    class="clip-btn copy-clipboard">
                                     <svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img"
                                         aria-label="files" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                         class="bi-files b-icon bi">
@@ -313,9 +315,6 @@
                         </div>
                     </div>
                 </fieldset>
-
-
-
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary btn-block rounded-pill">
@@ -375,29 +374,13 @@
                 <div class="float" style="right:0; bottom:0; opacity: 0.5;z-index: -99 ">
                     <img src="assets/images/flower2.png" style=" transform: rotate(180deg);" width="300vh">
                 </div>
-
                 <div class="float" style="left:0; top:0;opacity: 0.5;z-index: -99;">
                     <img class="" src="assets/images/flower2.png" alt="" width="300vh">
                 </div>
-                <!-- <div style="width: 100%; position: absolute;
-                margin-top: 10px;
-                overflow: hidden;
-                padding: 10%; ">
-             
-                </div> -->
-                <!-- <div  class="float">
-                    <h3 class="display-4 fw-bold mx-auto mb-2 animate__animated animate__zoomIn text-success"
-                        style="font-family:billy-signature ;animation-delay: 30sec;">   Syifa & Maulana</h3>
-                </div> -->
-
-
                 <img class="d-block mx-auto mb-4" src="assets/images/bridge1.png" alt="" width="130vw">
-                <!-- <img class="d-block mx-auto mb-2" src="assets/images/flower1.png" alt="" width="30%"> -->
                 <h1 class="display-3 fw-bold mx-auto mb-5 animate__animated animate__fadeInDown text-outline"
                     style="font-family: Parisienne-Regular;z-index: 99999;animation-delay: 0.9sec;"> Syifa & Maulana
                 </h1>
-
-
                 <h3 class="display-7 fw-bold mb-4">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
                     لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
                     بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</h3>
@@ -446,16 +429,19 @@
 
                     <div class="row">
                         <div class="col-lg-6 mb-4" style="overflow: auto; height:350px;">
-                            <div class="list-group gap-2 mb-4" style="opacity: 0.8;" id="wish"
+                            <div class="list-group gap-2 mb-1" style="opacity: 0.6;" id="wish"
                                 v-for="(item, index) in comments">
-                                <a href="#" style="background-image: url(assets/images/5589241.jpg);"
-                                    class="list-group-item list-group-item-action flex-column align-items-start animate__animated animate__fadeInDown">
+                                <a href="#"
+                                    style="background-image: url(assets/images/5589241.jpg); border: 2px solid rgba(255, 128, 9, 0.9); border-radius: 5%;"
+                                    class="list-group-item list-group-item-action flex-column align-items-start animate__animated animate__zoomInUp">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="mb-1">{{item.fromName}}</h5>
-                                        <small>{{item.tanggal}}</small>
+                                        <small>Dari {{item.address}}.</small>
                                     </div>
+                                    <hr>
                                     <p class="mb-1"> {{item.message}} .</p>
-                                    <small>Donec id elit non mi porta.</small>
+                                    <small style="font-size:11px">{{item.tanggal}}</small>
+
                                 </a>
 
                             </div>
@@ -479,12 +465,13 @@
                                         <label for="telepon">Telepon</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control input-sm" style="height:auto ;" id="comment" cols="100" rows="10" placeholder="Masukan Ucapan & Doa "></textarea>
+                                        <textarea class="form-control input-sm" style="height:auto ;" id="comment"
+                                            cols="100" rows="10" placeholder="Masukan Ucapan & Doa "></textarea>
                                         <label for="comment">Pesan</label>
                                     </div>
                                     <div class="mb-3">
                                         <button class="btn btn-primary" @click="submitForm()">Kirim</button>
-                                        <button class="btn btn-secondary">Batal</button>
+                                        <button class="btn btn-secondary" @click="resetForm()">Batal</button>
                                     </div>
                                 </div>
                             </div>
@@ -573,17 +560,6 @@
         $(function () {
 
             var url = "https://sta3.dnr.id/maul/whatsapp-api/helpers/service_comment.php";
-            // var data = new FormData();
-            //             data.append('mod', 'SHOWCOMMENTS');
-            // $.ajax({
-            //     url : url,
-            //     type : "GET",
-            //     data : {mod : 'SHOWCOMMENTS' },
-            //     success : function(response)
-            //     {
-            //         console.log(response)
-            //     }
-            // })
 
             var app = new Vue({
                 el: '#app',
@@ -591,43 +567,45 @@
                     comments: [],
                 },
                 created: function () {
-                   this.showData()
+                    this.showData()
                 },
                 updated: function () {
 
                 },
                 methods: {
-
-                    submitForm : function()
-                    {
+                    resetForm: function () {
+                        $('#nama').val("");
+                        $('#comment').val("");
+                        $('#alamat').val("");
+                        $('#telepon').val("");
+                    },
+                    submitForm: function () {
                         var data = new FormData();
                         data.append('mod', 'ADDCOMMENT');
-                        data.append('nama', $('#nama').val());
+                        data.append('name', $('#nama').val());
                         data.append('comment', $('#comment').val());
-                        data.append('telepon', $('#telepon').val());
-                         axios.post(url,  data ,
-                            { 
-                                headers : {
-                                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                        data.append('phone', $('#telepon').val());
+                        data.append('address', $('#alamat').val());
+                        axios.post(url, data, {
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                             }
                         }).then(function (response) {
-                            console.log(response.data)
                             app.showData()
-
-                        })
-                            .catch(function (error) {
-                                console.log(error);
-                            });
+                            app.resetForm();
+                        }).catch(function (error) {
+                            console.log(error);
+                        });
 
                     },
                     showData: function () {
                         var data = new FormData();
                         data.append('mod', 'SHOWCOMMENTS');
                         axios.get(url, {
-                                params : {
-                                    mod : 'SHOWCOMMENTS'
-                                }
-                        } ).then(function (response) {
+                            params: {
+                                mod: 'SHOWCOMMENTS'
+                            }
+                        }).then(function (response) {
                             app.comments = response.data;
                             console.log(response.data)
 
