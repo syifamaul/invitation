@@ -338,17 +338,40 @@
 
 <body class="d-flex flex-column h-100">
 
-    <a class="btn-float example-popover" tabindex="0" role="button" style="cursor:pointer ; bottom:0; left: 0; "
+    <a class="btn-float example-popover" tabindex="0" role="button" style="cursor:pointer ; top:10%; left: 0; "
         data-bs-toggle="modal" data-bs-placement="left" data-bs-custom-class="custom-popover"
         data-bs-trigger="hover focus" data-bs-content="Amplop Digital" data-bs-target="#modal-amplop-digital">
         <img src="assets/images/pay_money.18b5b10.svg" style="color:#fff; fill: #fff; width: 60%;margin-top: 12px;">
     </a>
 
-    <a class="btn-float" style="cursor:pointer ; ; bottom:0; right:0 ">
+    <a class="btn-float" style="cursor:pointer ;top:10%; right:0 ">
         <i class="fa fa-group" style="margin-top: 22px;"></i>
     </a>
 
     <div class="main" id="app">
+        <!-- Bottom Navbar -->
+        <nav class="navbar navbar-dark bg-success navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none">
+            <ul class="navbar-nav nav-justified w-100">
+                <li class="nav-item">
+                    <a href="#sec-home" class="nav-link text-center">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span class="small d-block">Branda</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sec-location" class="nav-link text-center">
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        <span class="small d-block">Agenda</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sec-wish" class="nav-link text-center">
+                        <i class="fa fa-comments-o" aria-hidden=" true"></i>
+                        <span class="small d-block">Ucapan & Doa</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
         <div class="px-4 py-3 text-center sticky-top">
             <!-- <nav class="navbar navbar-expand sticky-top" style="z-index:10000;bottom: 0;">
                 <div class="container-fluid">
@@ -367,6 +390,8 @@
                     </div>
                 </div>
             </nav> -->
+
+
 
             <section id="sec-home" style="margin-top:1%;">
                 <h1 class="display-3 fw-bold mx-auto mb-2 animate__animated animate__backInDown text-outline"
@@ -554,11 +579,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
     <script src="assets/js/jqFloat.js"></script>
-    <script src="assets/js/parallax.min.js"></script>
 
     <script>
         $(function () {
-            $('.parallax-window').parallax();
 
             var url = "https://sta3.dnr.id/maul/whatsapp-api/helpers/service_comment.php";
 
