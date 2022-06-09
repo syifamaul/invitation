@@ -350,7 +350,7 @@
 
     <div class="main" id="app">
         <div class="px-4 py-3 text-center sticky-top">
-            <nav class="navbar navbar-expand sticky-top" style="z-index:10000;bottom: 0;">
+            <!-- <nav class="navbar navbar-expand sticky-top" style="z-index:10000;bottom: 0;">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#"></a>
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
@@ -366,11 +366,11 @@
                         </div>
                     </div>
                 </div>
-            </nav>
+            </nav> -->
 
             <section id="sec-home" style="margin-top:1%;">
-                <h1 class="display-3 fw-bold mx-auto mb-2 animate__animated animate__fadeInDown  text-outline"
-                    style="font-family: Parisienne-Regular;z-index: 99999;animation-delay: 0.9sec;">Walimatul Ursy</h1>
+                <h1 class="display-3 fw-bold mx-auto mb-2 animate__animated animate__backInDown text-outline"
+                    style="font-family: Parisienne-Regular;z-index: 99999;">Walimatul Ursy</h1>
                 <div class="float" style="right:0; bottom:0; opacity: 0.5;z-index: -99 ">
                     <img src="assets/images/flower2.png" style=" transform: rotate(180deg);" width="300vh">
                 </div>
@@ -378,8 +378,8 @@
                     <img class="" src="assets/images/flower2.png" alt="" width="300vh">
                 </div>
                 <img class="d-block mx-auto mb-4" src="assets/images/bridge1.png" alt="" width="130vw">
-                <h1 class="display-3 fw-bold mx-auto mb-5 animate__animated animate__fadeInDown text-outline"
-                    style="font-family: Parisienne-Regular;z-index: 99999;animation-delay: 0.9sec;"> Syifa & Maulana
+                <h1 class="display-3 fw-bold mx-auto mb-5 animate__animated animate__tada text-outline animate__delay-2s"
+                    style="font-family: Parisienne-Regular;z-index: 99999;"> Syifa & Maulana
                 </h1>
                 <h3 class="display-7 fw-bold mb-4">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
                     لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
@@ -433,7 +433,7 @@
                                 v-for="(item, index) in comments">
                                 <a href="#"
                                     style="background-image: url(assets/images/5589241.jpg); border: 2px solid rgba(255, 128, 9, 0.9); border-radius: 5%;"
-                                    class="list-group-item list-group-item-action flex-column align-items-start animate__animated animate__zoomInUp">
+                                    class="list-group-item list-group-item-action flex-column align-items-start animate__animated animate__zoomInUp animate__delay-2s">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="mb-1">{{item.fromName}}</h5>
                                         <small>Dari {{item.address}}.</small>
@@ -552,12 +552,13 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
-        integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+    <script src="assets/js/jqFloat.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
 
     <script>
         $(function () {
+            $('.parallax-window').parallax();
 
             var url = "https://sta3.dnr.id/maul/whatsapp-api/helpers/service_comment.php";
 
