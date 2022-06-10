@@ -267,6 +267,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
     <script src="assets/js/jqFloat.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+
 </head>
 <!-- Modal -->
 <div class="modal fade" id="modal-amplop-digital" tabindex="-1" aria-labelledby="modal-amplop-digitalLabel"
@@ -326,8 +329,28 @@
                 <div class="text-center">
                     <!-- <img src="assets/images/undraw_confidential_letter_w6ux.4e4e97b.svg" alt="" style="width: 50%;"> -->
                 </div>
-                <input type="text" placeholder="Nama lengkap" required="required" aria-required="true"
-                    class="form-control" id="__BVID__74">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control input-sm" id="vnama" required="required"
+                        placeholder="Masukan Nama Anda">
+                    <label for="nama">Nama</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <legend tabindex="-1" class="bv-no-focus-ring col-form-label pt-0" id="__BVID__75__BV_label_">
+                        konfirmasi kehadiran</legend>
+                    <div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="rsvp" class="custom-control-input" value="yes" id="__BVID__76">
+                            <label class="custom-control-label" for="__BVID__76">Iya, saya akan datang</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="rsvp" class="custom-control-input" value="no" id="__BVID__77">
+                            <label class="custom-control-label" for="__BVID__77">Maaf, Sepertinya tidak bisa</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <input type="text" placeholder="Nama lengkap" required="required" aria-required="true"
+                    class="form-control" id="v_name">
                 <fieldset class="form-group" id="__BVID__75">
                     <legend tabindex="-1" class="bv-no-focus-ring col-form-label pt-0" id="__BVID__75__BV_label_">
                         konfirmasi kehadiran</legend>
@@ -341,22 +364,11 @@
                             <label class="custom-control-label" for="__BVID__77">Maaf, Sepertinya tidak bisa</label>
                         </div>
                     </div>
-                </fieldset>
+                </fieldset> -->
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary btn-block rounded-pill">
-                    <svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img"
-                        aria-label="box arrow in up" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                        class="bi-box-arrow-in-up b-icon bi">
-                        <g data-v-56641764="">
-                            <path fill-rule="evenodd"
-                                d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z">
-                            </path>
-                            <path fill-rule="evenodd"
-                                d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z">
-                            </path>
-                        </g>
-                    </svg> Kirim respon</button>
+                <button type="button" id="btn-visited" class="btn btn-primary btn-block rounded-pill">
+                    Kirim respon</button>
             </div>
 
         </div>
@@ -371,7 +383,6 @@
         data-bs-content="Amplop Digital" data-bs-target="#modal-amplop-digital">
         <i class="fa fa-envelope-o" aria-hidden="true" style="color:white;"></i>
     </a>
-
 
     <!-- Bottom Navbar -->
     <nav class="navbar navbar-dark bg-success navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none">
@@ -443,9 +454,9 @@
                     <div style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;" class="mb-4">
 
 
-                        <h4 class="display-6 fw-bold mb-4 text-muted">Akad Pernikahan</h4>
+                        <h4 class="display-6 fw-bold mb-4 text-muted">Akad</h4>
                         <h5>Sabtu, 31 Desember 2022 . Pukul 08:00 - Selesai</h5>
-                        <h4 class="display-6 fw-bold mb-4 text-muted">Resepsi Pernikahan</h4>
+                        <h4 class="display-6 fw-bold mb-4 text-muted">Resepsi</h4>
                         <h5>Sabtu, 31 Desember 2022 . Pukul 11:00 - 02:00</h5>
 
                         <div id="fly3" class="butterfly" style="z-index: 9999999999; right: 12%;"></div>
@@ -498,23 +509,24 @@
                             <div class="card" style="width: auto">
                                 <div class="card-body">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control input-sm" id="nama"
+                                        <input type="text" class="form-control input-sm" id="nama" required="required"
                                             placeholder="Masukan Nama Anda">
                                         <label for="nama">Nama</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control input-sm" id="alamat"
+                                        <input type="text" class="form-control input-sm" id="alamat" required="required"
                                             placeholder="Masukan Alamat Anda">
                                         <label for="alamat">Alamat</label>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control input-sm" id="telepon"
-                                            placeholder="Masukan Telepon Anda">
+                                            required="required" placeholder="Masukan Telepon Anda">
                                         <label for="telepon">Telepon</label>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control input-sm" style="height:auto ;" id="comment"
-                                            cols="100" rows="10" placeholder="Masukan Ucapan & Doa "></textarea>
+                                            required="required" cols="100" rows="10"
+                                            placeholder="Masukan Ucapan & Doa "></textarea>
                                         <label for="comment">Pesan</label>
                                     </div>
                                     <div class="mb-3">
@@ -597,8 +609,11 @@
 
 
     <script>
-        $(function () {
 
+
+
+        $(function () {
+            new ClipboardJS('.copy-clipboard');
             $('.butterfly').jqFloat('play', {
                 height: 300,
                 speed: 1800
@@ -635,11 +650,30 @@
 
                 },
                 methods: {
+
                     resetForm: function () {
                         $('#nama').val("");
                         $('#comment').val("");
                         $('#alamat').val("");
                         $('#telepon').val("");
+                    },
+
+                    submitFormVisit: function () {
+                        var data = new FormData();
+                        data.append('mod', 'ADDVISITOR');
+                        data.append('name', $('#nama').val());
+                        data.append('comment', $('#comment').val());
+
+                        axios.post(url, data, {
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                            }
+                        }).then(function (response) {
+                            //app.showData()
+                            app.resetFormVisit();
+                        }).catch(function (error) {
+                            console.log(error);
+                        });
                     },
                     submitForm: function () {
                         var data = new FormData();
