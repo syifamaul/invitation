@@ -376,14 +376,6 @@
 </div>
 
 <body class="d-flex flex-column h-100" id="wrapper">
-
-    <a class="btn-float example-popover" tabindex="0" role="button"
-        style="cursor:pointer ; bottom:12%; left: 1%; padding-top: 15px; " data-bs-toggle="modal"
-        data-bs-placement="left" data-bs-custom-class="custom-popover" data-bs-trigger="hover focus"
-        data-bs-content="Amplop Digital" data-bs-target="#modal-amplop-digital">
-        <i class="fa fa-envelope-o" aria-hidden="true" style="color:white;"></i>
-    </a>
-
     <!-- Bottom Navbar -->
     <nav class="navbar navbar-dark bg-success navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none">
         <ul class="navbar-nav nav-justified w-100">
@@ -407,9 +399,22 @@
             </li>
         </ul>
     </nav>
+    <a class="btn-float example-popover" tabindex="0" role="button"
+        style="cursor:pointer ; bottom:12%; left: 1%; padding-top: 15px; " data-bs-toggle="modal"
+        data-bs-placement="left" data-bs-custom-class="custom-popover" data-bs-trigger="hover focus"
+        data-bs-content="Amplop Digital" data-bs-target="#modal-amplop-digital">
+        <i class="fa fa-envelope-o" aria-hidden="true" style="color:white;"></i>
+    </a>
+
+    
     <div class="main" id="app">
+        <div id="sun1" class="sun" style="z-index: 9999999999;right: 10%;top:15%;"></div>
+        <div id="fly1" class="butterfly" style="z-index: 9999999999;left: 30%;top:5%;"></div>
+        <div id="fly2" class="butterfly" style="z-index: 9999999999;top:15%; right: 12%;"></div>
+        <div id="sun2" class="sun" style="z-index: 9999999999;left: 10%;"></div>
+        <div id="fly3" class="butterfly" style="z-index: 9999999999; right: 12%;"></div>
+        <div id="sun3" class="sun" style="z-index: 9999999999;top:25%;left: 4%;"></div>
         <div class="px-4 py-3 text-center sticky-top">
-            <div id="fly1" class="butterfly" style="z-index: 9999999999;left: 30%;top:5%;"></div>
 
             <section id="sec-home" style="margin-top:1%;">
                 <h1 class="display-1 fw-bold mx-auto mb-2 animate__animated animate__backInDown text-outline"
@@ -433,7 +438,6 @@
                     بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</h3>
                 <div class="col-lg-6 mx-auto  mb-4"
                     style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                    <div id="sun1" class="sun" style="z-index: 9999999999;right: 10%;"></div>
 
                     <p class=" mb-4 display-7">" Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
                         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram
@@ -459,8 +463,7 @@
                         <h4 class="display-6 fw-bold mb-4 text-muted">Resepsi</h4>
                         <h5>Sabtu, 31 Desember 2022 . Pukul 11:00 - 02:00</h5>
 
-                        <div id="fly3" class="butterfly" style="z-index: 9999999999; right: 12%;"></div>
-                        <div id="sun3" class="sun" style="z-index: 9999999999;left: 4%;"></div>
+                      
                         <p class="display-7">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak / Ibu /
                             Saudara / i. berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.
                         </p>
@@ -486,8 +489,7 @@
                     <hr>
 
                     <div class="row">
-                        <div id="fly2" class="butterfly" style="z-index: 9999999999; right: 12%;"></div>
-                        <div id="sun2" class="sun" style="z-index: 9999999999;left: 10%;"></div>
+                  
                         <div class="col-lg-6 mb-4" style="overflow: auto; height:350px;">
                             <div class="list-group gap-2 mb-1" style="opacity: 0.6;" id="wish"
                                 v-for="(item, index) in comments">
@@ -583,7 +585,7 @@
                         </div>
                     </div>
                 </section>
-
+              
             </div>
 
             <div class="toast-container" style="right:0; top:0 ">
