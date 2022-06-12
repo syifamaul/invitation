@@ -237,8 +237,18 @@
         .sun {
             width: 32px;
             height: 42px;
-            ;
             background-image: url(assets/images/sun-flower.png);
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: 16px;
+        }
+
+        .salju {
+            width: 32px;
+            height: 32px;
+            background-image: url(assets/images/salju.png);
+            background-repeat: no-repeat;
+            background-size: 16px;
             position: absolute;
         }
 
@@ -376,8 +386,10 @@
 </div>
 
 <body class="d-flex flex-column h-100" id="wrapper">
+    
+    
     <!-- Bottom Navbar -->
-    <nav class="navbar navbar-dark bg-success navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none">
+    <nav class="navbar navbar-dark bg-success navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none" style="z-index: 99999;">
         <ul class="navbar-nav nav-justified w-100">
             <li class="nav-item">
                 <a href="#sec-home" class="nav-link text-center">
@@ -408,14 +420,17 @@
 
     
     <div class="main" id="app">
-        <div id="sun1" class="sun" style="z-index: 9999999999;right: 10%;top:15%;"></div>
-        <div id="fly1" class="butterfly" style="z-index: 9999999999;left: 30%;top:5%;"></div>
-        <div id="fly2" class="butterfly" style="z-index: 9999999999;top:15%; right: 12%;"></div>
-        <div id="sun2" class="sun" style="z-index: 9999999999;left: 10%;"></div>
-        <div id="fly3" class="butterfly" style="z-index: 9999999999; right: 12%;"></div>
-        <div id="sun3" class="sun" style="z-index: 9999999999;top:25%;left: 4%;"></div>
+       
         <div class="px-4 py-3 text-center sticky-top">
-
+            <div class="float d-block mx-auto" style="left:20% ;top: 5%;width: 40%;z-index: 99999;">
+                <div id="sun1" class="sun" style="right: 10%;"></div>
+                <div id="fly1" class="butterfly" style="left: 10%;"></div>
+                <div class="salju" style="top: 24%;right:2%;"></div>
+                <div class="salju" style="top: 14%;left:2%;"></div>
+                <div class="salju" style="top: 28%;right:10%;"></div>
+                <div class="salju" style="top: 21%;left:22%;"></div>
+            </div>
+                    
             <section id="sec-home" style="margin-top:1%;">
                 <h1 class="display-1 fw-bold mx-auto mb-2 animate__animated animate__backInDown text-outline"
                     style="font-family: Parisienne-Regular;z-index: 99999;">Walimatul Ursy</h1>
@@ -464,7 +479,7 @@
                 </div>
                 
             </section>
-
+           
             <div class="mb-4 py-3 mb-4 container sticky-top">
 
                 <section id="sec-location" style="margin-top:100px;">
@@ -502,7 +517,7 @@
                     <hr>
 
                     <div class="row">
-                  
+                       
                         <div class="col-lg-6 mb-4" style="overflow: auto; height:350px;">
                             <div class="list-group gap-2 mb-1" style="opacity: 0.6;" id="wish"  
                                 v-for="(item, index) in comments">
@@ -557,12 +572,15 @@
 
                 <section id="sec-gallery" class="mb-4" style="min-height:50vh ; margin-top: 100px;">
                     <div class="row">
+                       
                         <div class="container">
                             <h2 class="display-5 fw-bold mb-4 text-warning text-outline">
                                 Our Gallery</h2>
                             <hr>
 
                             <section class="syifa-maul slider">
+
+                                                   
                                 <div class="slide"><img
                                         style="opacity:0.3;width:100px;height: 100px;border-radius:50% ; border: 5px solid rgba(255, 128, 9, 0.9);"
                                         src="assets/images/1.PNG">
@@ -615,26 +633,32 @@
 
         $(function () {
             new ClipboardJS('.copy-clipboard');
+
             $('.butterfly').jqFloat('play', {
-                height: 100,
-                speed: 1500
-            });
-            $('body').hover(function () {
-                $('.butterfly').jqFloat('play');
-            }, function () {
-                //$(this).jqFloat('stop');
+                speed: 1500,
+                height: 50
             });
 
             $('.sun').jqFloat('play', {
-                height: 100,
-                speed: 1500
+                speed: 1500,
+                height: 50
             });
+            
+            $('.salju').jqFloat('play', {
+                speed: 2800,
+                height: 50
+            });
+
             $('body').hover(function () {
+                $('.butterfly').jqFloat('play');
                 $('.sun').jqFloat('play');
+                $('.salju').jqFloat('play');
             }, function () {
                 //$(this).jqFloat('stop');
             });
 
+
+          
 
 
             var url = "https://sta3.dnr.id/maul/whatsapp-api/helpers/service_comment.php";
