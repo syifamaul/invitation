@@ -316,49 +316,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
 
 </head>
-<!-- Modal -->
-<div class="modal fade" id="modal-amplop-digital" tabindex="-1" aria-labelledby="modal-amplop-digitalLabel"
-    aria-hidden="true" style="z-index: 99999999999;  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <div class=" modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modal-amplop-digitalLabel">Amplop Digital</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Direct Transfer Transfer langsung ke rekening yang tertera Transfer langsung ke rekening di bawah ini:
-                <hr>
-                <div class="row">
-                    <div class="col-sm-6 col-xs-6">
-                        <ul>
-                            <li>MANDIRI</li>
-                            <li><b>703864615800</b>
-                                <a data-clipboard-text="703864615800" style="position:cursor;" target="_self"
-                                    class="clip-btn copy-clipboard">
-                                    <i class="fa fa-clipboard" aria-hidden="true" style="font-size:14px;"></i>
-                                </a>
-                            </li>
-                            <li>a/n Puteri Syifa Ramadhan</li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-xs-6">
-                        <ul>
-                            <li>CIMB</li>
-                            <li><b>703864615800</b>
-                                <a data-clipboard-text="703864615800" style="position:cursor;" target="_self"
-                                    class="clip-btn copy-clipboard">
-                                    <i class="fa fa-clipboard" aria-hidden="true" style="font-size:14px;"></i>
-                                </a>
-                            </li>
-                            <li>a/n Achmad Maulana</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 <body class="d-flex flex-column h-100" id="wrapper">
@@ -668,12 +625,60 @@
             </div>
         </div>
 
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-amplop-digital" tabindex="-1" aria-labelledby="modal-amplop-digitalLabel"
+            aria-hidden="true"
+            style="z-index: 99999999999;  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <div class=" modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-amplop-digitalLabel">Amplop Digital</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Direct Transfer Transfer langsung ke rekening yang tertera Transfer langsung ke rekening di
+                        bawah ini:
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-6">
+                                <ul>
+                                    <li>MANDIRI</li>
+                                    <li><b>703864615800</b>
+                                        <a data-clipboard-text="703864615800" style="position:cursor;" target="_self"
+                                            class="btn clip-btn copy-clipboard">
+                                            <i class="fa fa-clipboard" aria-hidden="true" style="font-size:14px;"></i>
+                                        </a>
+                                    </li>
+                                    <li>a/n Puteri Syifa Ramadhan</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <ul>
+                                    <li>CIMB</li>
+                                    <li><b>703864615800</b>
+                                        <a data-clipboard-text="703864615800" style="position:cursor;" target="_self"
+                                            class="btn clip-btn copy-clipboard">
+                                            <i class="fa fa-clipboard" aria-hidden="true" style="font-size:14px;"></i>
+                                        </a>
+                                    </li>
+                                    <li>a/n Achmad Maulana</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <script>
 
         $(function () {
-            new ClipboardJS('.copy-clipboard');
+            // new ClipboardJS('.copy-clipboard');
 
             $.fakeLoader({
                 timeToHide: 1200,
@@ -827,14 +832,34 @@
                 container: 'body'
             }).show();
 
-            $('.copy-clipboard').click(function () {
-                if (navigator.clipboard) {
-                    navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
-                    console.log('Clipboard API available');
-                    alert('Copied the text: ' + $(this).attr('data-clipboard-text'))
+            // $('.copy-clipboard').click(function () {
+            //     if (navigator.clipboard) {
+            //         navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
+            //         console.log('Clipboard API available');
+            //         alert('Copied the text: ' + $(this).attr('data-clipboard-text'))
 
-                }
-            });
+            //     }
+            // });
+
+
+            var clipboard = new ClipboardJS('.copy-clipboard');
+            if (ClipboardJS.isSupported()) {
+                clipboard.on('success', function (e) {
+                    console.info('Action:', e.action);
+                    console.info('Text:', e.text);
+                    console.info('Trigger:', e.trigger);
+                    // alert('Copied the text: ' + e.text)
+                    navigator.clipboard.writeText(e.text);
+                    e.clearSelection();
+                });
+                clipboard.on('error', function (e) {
+                    console.error('Action:', e.action);
+                    console.error('Trigger:', e.trigger);
+                });
+
+            }
+
+
 
             $('.syifa-maul').slick({
                 slidesToShow: 6,
