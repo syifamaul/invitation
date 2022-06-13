@@ -301,6 +301,26 @@
             background-size: cover;
             background-repeat-y: no-repeat;
         }
+
+        .typed-out {
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            animation:
+                typing 1s steps(20, end) forwards;
+            font-size: 1.6rem;
+            width: 0;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
     </style>
 
 
@@ -399,7 +419,8 @@
                     بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</h3>
                 <div class="col-lg-6 mx-auto mb-4"
                     style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                    <p class=" mb-4 display-7">" Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+                    <p class=" mb-4 display-7">" Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
+                        menciptakan
                         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram
                         kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu
                         benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir. "</p>
@@ -678,10 +699,9 @@
     <script>
 
         $(function () {
-            // new ClipboardJS('.copy-clipboard');
 
             $.fakeLoader({
-                timeToHide: 1200,
+                timeToHide: 1500,
                 bgColor: "#34495e",
                 spinner: "spinner3"
             });
@@ -848,6 +868,7 @@
                         // console.info('Trigger:', e.trigger);
                         navigator.clipboard.writeText(e.text);
                         e.clearSelection();
+                        alert('Copied the text: ' + e.text)
                     });
                     clipboard.on('error', function (e) {
                         console.error('Action:', e.action);
