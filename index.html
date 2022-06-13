@@ -419,7 +419,7 @@
                     لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
                     بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</h3>
                 <div class="col-lg-6 mx-auto mb-4"
-                    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    style="font-family: Roboto-light">
                     <p class=" mb-4 display-7">" Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
                         menciptakan
                         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram
@@ -515,7 +515,7 @@
                             <div class="card" style="width: auto">
                                 <div class="card-body">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control input-sm" id="nama" required="required"
+                                        <input type="text" class="form-control input-sm" id="fromName" required="required"
                                             placeholder="Masukan Nama Anda">
                                         <label for="nama">Nama</label>
                                     </div>
@@ -750,7 +750,7 @@
                         $('#vnama').val("");
                     },
                     resetForm: function () {
-                        $('#nama').val("");
+                        $('#fromName').val("");
                         $('#comment').val("");
                         $('#alamat').val("");
                         $('#telepon').val("");
@@ -802,7 +802,7 @@
                     },
                     submitForm: function () {
                         var data = new FormData();
-                        if ($('#nama').val() == '') {
+                        if ($('#fromName').val() == '') {
                             alert('Masukan nama Dulu ya!!')
                         } else if ($('#telepon').val() == '') {
                             alert('Masukan telepon Dulu ya!!')
@@ -812,7 +812,7 @@
                             alert('Masukan ucapannya Dulu ya!!')
                         } else {
                             data.append('mod', 'ADDCOMMENT');
-                            data.append('name', $('#nama').val());
+                            data.append('fromName', $('#fromName').val());
                             data.append('comment', $('#comment').val());
                             data.append('phone', $('#telepon').val());
                             data.append('address', $('#alamat').val());
