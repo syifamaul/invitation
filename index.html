@@ -237,13 +237,15 @@
         }
 
         .butterfly {
-            width: 35px;
-            height: 27px;
-            background: url(assets/images/sprite.png) no-repeat 0 -360px;
+            width: 16px;
+            height: 15px; 
+            /* background: url(assets/images/sprite.png) no-repeat 0 -360px; */
+            background-image: url(assets/images/butterfly.png);
             position: absolute;
             z-index: 20;
         }
-
+ 
+        
         .sun {
             width: 32px;
             height: 42px;
@@ -445,14 +447,7 @@
     <div class="main" id="app">
        
         <div class="px-4 py-3 text-center sticky-top">
-            <div class="float d-block mx-auto" style="left:20% ;top: 5%;width: 40%;z-index: 99999;">
-                <div id="sun1" class="sun" style="right: 10%;"></div>
-                <div id="fly1" class="butterfly" style="left: 10%;"></div>
-                <div class="salju" style="right:2%;"></div>
-                <div class="salju" style="left:2%;"></div>
-                <div class="salju" style="right:10%;"></div>
-                <div class="salju" style="left:22%;"></div>
-            </div>
+            
                     
             <section id="sec-home" style="margin-top:1%;">
                 <img class="d-block mx-auto" src="assets/images/quotes_decor_2.webp">
@@ -501,7 +496,16 @@
                         benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir. "</p>
 
              </div>
-                
+             <div class="float d-block mx-auto" style="top: 5%;width: 80%;z-index: 99999;">
+                <div id="sun1" class="sun" style="right: 10%;"></div>
+                <div id="fly1" class="butterfly" style="left: 10%;"></div>
+                <div class="salju" style="right:2%;"></div>
+                <div class="salju" style="right:2%;"></div>
+                <div class="salju" style="right:10%;"></div>
+                <div class="salju" style="left:22%;"></div>
+                <div class="salju" style="left:1%;"></div>
+                <div class="salju" style="left:5%;top:20%"></div>
+            </div>
             </section>
            
                 <section id="sec-mempelai" style="margin-top:100px;" class="mb-4">
