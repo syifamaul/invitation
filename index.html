@@ -673,7 +673,6 @@
     <script>
 
         $(function () {
-
             new ClipboardJS('.copy-clipboard');
 
             $.fakeLoader({
@@ -829,8 +828,12 @@
             }).show();
 
             $('.copy-clipboard').click(function () {
-                navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
-                alert('Copied the text: ' + $(this).attr('data-clipboard-text'))
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
+                    console.log('Clipboard API available');
+                    alert('Copied the text: ' + $(this).attr('data-clipboard-text'))
+
+                }
             });
 
             $('.syifa-maul').slick({
