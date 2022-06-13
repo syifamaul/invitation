@@ -832,32 +832,36 @@
                 container: 'body'
             }).show();
 
-            // $('.copy-clipboard').click(function () {
-            //     if (navigator.clipboard) {
-            //         navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
-            //         console.log('Clipboard API available');
-            //         alert('Copied the text: ' + $(this).attr('data-clipboard-text'))
+            $('.copy-clipboard').click(function () {
+                // if (navigator.clipboard) {
+                //     navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
+                //     console.log('Clipboard API available');
+                //     alert('Copied the text: ' + $(this).attr('data-clipboard-text'))
 
-            //     }
-            // });
+                // }
+
+                var clipboard = new ClipboardJS('.copy-clipboard');
+                if (ClipboardJS.isSupported()) {
+                    clipboard.on('success', function (e) {
+                        // console.info('Action:', e.action);
+                        // console.info('Text:', e.text);
+                        // console.info('Trigger:', e.trigger);
+                        navigator.clipboard.writeText(e.text);
+                        e.clearSelection();
+                    });
+                    clipboard.on('error', function (e) {
+                        console.error('Action:', e.action);
+                        console.error('Trigger:', e.trigger);
+                    });
+
+                    // let text = navigator.clipboard.readText();
+                    // alert(text)
+
+                }
+            });
 
 
-            var clipboard = new ClipboardJS('.copy-clipboard');
-            if (ClipboardJS.isSupported()) {
-                clipboard.on('success', function (e) {
-                    console.info('Action:', e.action);
-                    console.info('Text:', e.text);
-                    console.info('Trigger:', e.trigger);
-                    // alert('Copied the text: ' + e.text)
-                    navigator.clipboard.writeText(e.text);
-                    e.clearSelection();
-                });
-                clipboard.on('error', function (e) {
-                    console.error('Action:', e.action);
-                    console.error('Trigger:', e.trigger);
-                });
 
-            }
 
 
 
