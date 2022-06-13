@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/fakeLoader.min.css" />
     <style>
         html,
         body {
@@ -311,7 +312,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
     <script src="assets/js/jqFloat.js"></script>
-
+    <script src="assets/js/fakeLoader.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
 
 </head>
@@ -361,6 +362,7 @@
 
 
 <body class="d-flex flex-column h-100" id="wrapper">
+    <div class="fakeLoader"></div>
 
     <!-- Bottom Navbar -->
     <nav class="navbar navbar-dark bg-dark navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none"
@@ -671,7 +673,14 @@
     <script>
 
         $(function () {
+
             new ClipboardJS('.copy-clipboard');
+
+            $.fakeLoader({
+                timeToHide: 1200,
+                bgColor: "#34495e",
+                spinner: "spinner3"
+            });
 
             $('.butterfly').jqFloat('play', {
                 speed: 1500,
@@ -703,6 +712,7 @@
                 el: '#app',
                 data: {
                     comments: [],
+                    visitors: [],
                 },
                 created: function () {
                     this.showData()
@@ -720,7 +730,21 @@
                         $('#alamat').val("");
                         $('#telepon').val("");
                     },
-
+                    showVisitor: function () {
+                        //SHOWVISITOR.
+                        var data = new FormData();
+                        data.append('mod', 'SHOWVISITOR');
+                        axios.post(url, data, {
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                            }
+                        }).then(function (response) {
+                            app.showData()
+                            app.resetForm();
+                        }).catch(function (error) {
+                            console.log(error);
+                        });
+                    },
                     submitFormVisit: function () {
                         var data = new FormData();
 
