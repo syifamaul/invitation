@@ -180,6 +180,14 @@
             text-shadow: 2px 2px #0f0f0f;
         }
 
+
+        .text-utama {
+            -webkit-text-fill-color: rgba(255, 128, 9);
+            -webkit-text-stroke-width: 0.9px;
+            -webkit-text-stroke-color: rgb(255, 255, 255);
+            text-shadow: 1px 1px #0f0f0f;
+        }
+
         button {
             position: relative;
             overflow: hidden;
@@ -238,14 +246,14 @@
 
         .butterfly {
             width: 16px;
-            height: 15px; 
+            height: 15px;
             /* background: url(assets/images/sprite.png) no-repeat 0 -360px; */
             background-image: url(assets/images/butterfly.png);
             position: absolute;
             z-index: 20;
         }
- 
-        
+
+
         .sun {
             width: 32px;
             height: 42px;
@@ -278,20 +286,20 @@
 
         .nav-item>a:hover {
             color: rgba(250, 87, 155, 0.9);
-            text-shadow:  4px 4px #000;
+            text-shadow: 4px 4px #000;
 
         }
 
         .quote {
-        height: max-content;
-        margin: 2rem 0;
-        position: relative;
-        padding: 0 !important;
-        background-image: url(assets/images/New_Project__42_.png);
-        background-position-x: right;
-        background-position-y: center;
-        background-size: cover;
-        background-repeat-y: no-repeat;
+            height: max-content;
+            margin: 2rem 0;
+            position: relative;
+            padding: 0 !important;
+            background-image: url(assets/images/New_Project__42_.png);
+            background-position-x: right;
+            background-position-y: center;
+            background-size: cover;
+            background-repeat-y: no-repeat;
         }
     </style>
 
@@ -412,9 +420,10 @@
 </div>
 
 <body class="d-flex flex-column h-100" id="wrapper">
-    
+
     <!-- Bottom Navbar -->
-    <nav class="navbar navbar-dark bg-dark navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none" style="z-index: 99999;opacity: 0.9;">
+    <nav class="navbar navbar-dark bg-dark navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none"
+        style="z-index: 99999;opacity: 0.9;">
         <ul class="navbar-nav nav-justified w-100">
             <li class="nav-item">
                 <a href="#sec-home" class="nav-link text-center">
@@ -423,15 +432,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#sec-location" class="nav-link text-center">
+                <a href="#sec-mempelai" class="nav-link text-center">
                     <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    <span class="small d-block">Mempelai</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#sec-location" class="nav-link text-center">
+                    <i class="fa fa-calendar-o" aria-hidden="true"></i>
                     <span class="small d-block">Agenda</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#sec-wish" class="nav-link text-center">
                     <i class="fa fa-comments-o" aria-hidden=" true"></i>
-                    <span class="small d-block">Ucapan & Doa</span>
+                    <span class="small d-block">Ucapan</span>
                 </a>
             </li>
         </ul>
@@ -443,12 +458,12 @@
         <i class="fa fa-envelope-o" aria-hidden="true" style="color:white;"></i>
     </a>
 
-    
+
     <div class="main" id="app">
-       
+
         <div class="px-4 py-3 text-center sticky-top">
-            
-                    
+
+
             <section id="sec-home" style="margin-top:1%;">
                 <img class="d-block mx-auto" src="assets/images/quotes_decor_2.webp">
 
@@ -463,12 +478,14 @@
                     <img class="" src="assets/images/flower2.png" alt="" width="300vh">
                 </div>
                 <img class="d-block mx-auto mb-4" src="assets/images/bridge1.png" alt="" width="130vw">
-                <h1 class="display-5 fw-bold mx-auto mb-5 animate__animated animate__tada text-outline animate__delay-2s"
-                    style="font-family: Parisienne-Regular;z-index: 99999;"> Syifa & Maulana
+                <h1 class="display-5 fw-bold mx-auto mb-5 animate__animated animate__tada  animate__delay-2s"
+                    style="font-family: Parisienne-Regular;z-index: 99999;"><span style="color: #ff46a8;">Syifa</span>
+                    & <span style="color: #4f8149;">Maulana</span>
                 </h1>
-                <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+                <div aria-live="polite" aria-atomic="true"
+                    class="d-flex justify-content-center align-items-center w-100">
 
-                    <div class="toast-container" >
+                    <div class="toast-container">
                         <div class="toast text-dark fade show">
                             <div class="toast-header text-dark">
                                 <strong class="me-auto"><i class="bi-gift-fill"></i> Assalamualaikum</strong>
@@ -476,14 +493,15 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
                             </div>
                             <div class="toast-body">
-                                Sebelumnya syifa dan bang maul ngucapin banyak-banyak terima kasih untuk doa dan kehadirannya :)
-    
+                                Sebelumnya syifa dan bang maul ngucapin banyak-banyak terima kasih untuk doa dan
+                                kehadirannya :)
+
                             </div>
                         </div>
-    
+
                     </div>
                 </div>
-                 <h3 class="display-7 fw-bold mb-4">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
+                <h3 class="display-7 fw-bold mb-4">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
                     لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
                     بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</h3>
                 <div class="col-lg-6 mx-auto  mb-4"
@@ -495,37 +513,41 @@
                         dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu
                         benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir. "</p>
 
-             </div>
-             <div class="float d-block mx-auto" style="top: 5%;width: 80%;z-index: 99999;">
-                <div id="sun1" class="sun" style="right: 10%;"></div>
-                <div id="fly1" class="butterfly" style="left: 10%;"></div>
-                <div class="salju" style="right:2%;"></div>
-                <div class="salju" style="right:2%;"></div>
-                <div class="salju" style="right:10%;"></div>
-                <div class="salju" style="left:22%;"></div>
-                <div class="salju" style="left:1%;"></div>
-                <div class="salju" style="left:5%;top:20%"></div>
-            </div>
+                </div>
+                <div class="float d-block mx-auto" style="top: 5%;width: 80%;z-index: 99999;">
+                    <div id="sun1" class="sun" style="right: 10%;"></div>
+                    <div id="fly1" class="butterfly" style="left: 10%;"></div>
+                    <div class="salju" style="right:2%;"></div>
+                    <div class="salju" style="right:2%;"></div>
+                    <div class="salju" style="right:10%;"></div>
+                    <div class="salju" style="left:22%;"></div>
+                    <div class="salju" style="left:1%;"></div>
+                    <div class="salju" style="left:5%;top:20%"></div>
+                </div>
             </section>
-           
-                <section id="sec-mempelai" style="margin-top:100px;" class="mb-4">
-                    <div class="row mb-4" >
-                        <h4 class="display-5 fw-bold mb-2 text-outline quote" >Calon Pengantin </h4>
-                        <div class="col-sm-6" style="margin-top:100px;" >
-                            <h2 class="fw-bold display-4" style="font-family:Julietta ;color: #ba7198;">Puteri Syifa Ramadhan S.E</h2>
-                            <p class="fw-bold mb-4 display-7"  style="font-family: Roboto-Light"> Putri dari <br> Bapak Abdul Kholik & Ibu Tuti Surtini</h4>
-                        </div>
-                        <div class="col-sm-6" style="margin-top:100px;" >
-                            <h2 class="fw-bold display-4" style="font-family:Julietta ;color: #ba7198;">Achmad Maulana S.Kom</h2>
-                            <p class="fw-bold mb-4 display-7"  style="font-family: Roboto-Light"> Putra dari <br> Bapak Sobari & Ibu Siti Aminah</h4>
-                        </div>
+
+            <section id="sec-mempelai" style="margin-top:100px;" class="mb-4">
+                <div class="row mb-4">
+                    <h4 class="display-5 fw-bold mb-2 text-outline quote">Calon Pengantin </h4>
+                    <div class="col-sm-6" style="margin-top:100px;">
+                        <h2 class="fw-bold display-4" style="font-family:Julietta ;color: #ba7198;">Puteri Syifa
+                            Ramadhan S.E</h2>
+                        <p class="fw-bold mb-4 display-7" style="font-family: Roboto-Light"> Putri dari <br> Bapak Abdul
+                            Kholik & Ibu Tuti Surtini</h4>
                     </div>
-                 </section>
+                    <div class="col-sm-6" style="margin-top:100px;">
+                        <h2 class="fw-bold display-4" style="font-family:Julietta ;color: #ba7198;">Achmad Maulana S.Kom
+                        </h2>
+                        <p class="fw-bold mb-4 display-7" style="font-family: Roboto-Light"> Putra dari <br> Bapak
+                            Sobari & Ibu Siti Aminah</h4>
+                    </div>
+                </div>
+            </section>
 
 
             <div class="mb-4 py-3 mb-4 container sticky-top">
                 <section id="sec-location" style="margin-top:100px;" class="mb-4">
-                    <h4 class="display-5 fw-bold mb-4 text-outline quote" >Acara Akan Diselenggarakan </h4>
+                    <h4 class="display-5 fw-bold mb-4 text-outline quote">Acara Akan Diselenggarakan </h4>
                     <hr>
                     <div style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;" class="mb-4">
 
@@ -534,7 +556,7 @@
                         <h4 class="display-6 fw-bold mb-4 text-muted">Resepsi</h4>
                         <h5>Sabtu, 31 Desember 2022 . Pukul 11:00 - 02:00</h5>
 
-                      
+
                         <p class="display-7">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak / Ibu /
                             Saudara / i. berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.
                         </p>
@@ -559,9 +581,9 @@
                     <hr>
 
                     <div class="row">
-                       
+
                         <div class="col-lg-6 mb-4" style="overflow: auto; height:350px;">
-                            <div class="list-group gap-2 mb-1" style="opacity: 0.6;" id="wish"  
+                            <div class="list-group gap-2 mb-1" style="opacity: 0.6;" id="wish"
                                 v-for="(item, index) in comments">
                                 <a style="background-image: url(assets/images/5589241.jpg); border: 2px solid rgba(255, 128, 9, 0.9); border-radius: 5%;"
                                     class="list-group-item list-group-item-action flex-column align-items-start animate__animated animate__zoomInUp animate__delay-2s">
@@ -655,9 +677,9 @@
                         </div>
                     </div>
                 </section>
-              
+
             </div>
-            
+
         </div>
 
     </div>
@@ -682,7 +704,7 @@
                 speed: 1500,
                 height: 50
             });
-            
+
             $('.salju').jqFloat('play', {
                 speed: 1500,
                 height: 50
@@ -696,8 +718,6 @@
                 //$(this).jqFloat('stop');
             });
 
-
-          
 
 
             var url = "https://sta3.dnr.id/maul/whatsapp-api/helpers/service_comment.php";
