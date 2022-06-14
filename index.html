@@ -321,6 +321,26 @@
                 width: 100%
             }
         }
+
+
+        .blink {
+            color: rgba(15, 15, 15, 0.6);
+            animation: blink 2s linear infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: .5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
 
 
@@ -472,7 +492,9 @@
                             Saudara / i. berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.
                         </p>
                         <div class="container">
-                            <h5 class="fw-bold">Yang Insya Allah Hadir <span id="total_visitor">0</span></h5>
+                            <p class="fw-bold text-muted display-7">Yang Insya Allah Hadir <span id="total_visitor"
+                                    class="blink">0</span>
+                            </p>
                         </div>
                         <button type="button" class="btn-block rounded-pill " data-bs-toggle="modal"
                             data-bs-target="#modal-kehadiran"
