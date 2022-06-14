@@ -816,7 +816,8 @@
                                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                                 }
                             }).then(function (response) {
-                                alert(response.data)
+                                alert(response.data);
+                                this.showVisitor();
                                 app.resetFormVisit();
                                 //$("#modal-kehadiran").hide();
                                 var myModal = bootstrap.Modal.getOrCreateInstance($('#modal-kehadiran'));
