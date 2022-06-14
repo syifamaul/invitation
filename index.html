@@ -418,8 +418,7 @@
                 <h3 class="display-7 fw-bold mb-4">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
                     لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
                     بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</h3>
-                <div class="col-lg-6 mx-auto mb-4"
-                    style="font-family: Roboto-light">
+                <div class="col-lg-6 mx-auto mb-4" style="font-family: Roboto-light">
                     <p class=" mb-4 display-7">" Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
                         menciptakan
                         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram
@@ -472,7 +471,9 @@
                         <p class="display-7">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak / Ibu /
                             Saudara / i. berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.
                         </p>
-
+                        <div class="container">
+                            <h5 class="fw-bold">Yang Insya Allah Hadir <span id="total_visitor">0</span></h5>
+                        </div>
                         <button type="button" class="btn-block rounded-pill " data-bs-toggle="modal"
                             data-bs-target="#modal-kehadiran"
                             style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Konfirmasi Kehadiran
@@ -494,7 +495,7 @@
 
                     <div class="row">
 
-                        <div class="col-lg-6 mb-4" style="overflow: auto; height:350px;">
+                        <div class="col-lg-6 mb-4" style="overflow: auto; max-height:350px;">
                             <div class="list-group gap-2 mb-1" style="opacity: 0.6;" id="wish"
                                 v-for="(item, index) in comments">
                                 <a style="background-image: url(assets/images/5589241.jpg); border: 2px solid rgba(255, 128, 9, 0.9); border-radius: 5%;"
@@ -515,8 +516,8 @@
                             <div class="card" style="width: auto">
                                 <div class="card-body">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control input-sm" id="fromName" required="required"
-                                            placeholder="Masukan Nama Anda">
+                                        <input type="text" class="form-control input-sm" id="fromName"
+                                            required="required" placeholder="Masukan Nama Anda">
                                         <label for="nama">Nama</label>
                                     </div>
                                     <div class="form-floating mb-3">
@@ -667,8 +668,8 @@
                                 <ul>
                                     <li>MANDIRI</li>
                                     <li><b>703864615800</b>
-                                        <a data-clipboard-text="703864615800" style="position:cursor;color:blue" target="_self"
-                                            class="btn clip-btn copy-clipboard">
+                                        <a data-clipboard-text="703864615800" style="position:cursor;color:blue"
+                                            target="_self" class="btn clip-btn copy-clipboard">
                                             <i class="fa fa-clipboard" aria-hidden="true" style="font-size:14px;"></i>
                                         </a>
                                     </li>
@@ -679,8 +680,8 @@
                                 <ul>
                                     <li>CIMB</li>
                                     <li><b>703864615800</b>
-                                        <a data-clipboard-text="703864615800" style="position:cursor;;color:blue" target="_self"
-                                            class="btn clip-btn copy-clipboard">
+                                        <a data-clipboard-text="703864615800" style="position:cursor;;color:blue"
+                                            target="_self" class="btn clip-btn copy-clipboard">
                                             <i class="fa fa-clipboard" aria-hidden="true" style="font-size:14px;"></i>
                                         </a>
                                     </li>
@@ -740,7 +741,8 @@
                     visitors: [],
                 },
                 created: function () {
-                    this.showData()
+                    this.showComment();
+                    this.showVisitor();
                 },
                 updated: function () {
 
@@ -756,16 +758,20 @@
                         $('#telepon').val("");
                     },
                     showVisitor: function () {
-                        //SHOWVISITOR.
-                        var data = new FormData();
-                        data.append('mod', 'SHOWVISITOR');
-                        axios.post(url, data, {
+                        axios.get(url, {
+                            params: {
+                                mod: 'LISTVISITORS'
+                            }
+                        }, {
                             headers: {
                                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                             }
                         }).then(function (response) {
-                            app.showData()
-                            app.resetForm();
+                            app.visitors = response.data;
+                            app.resetFormVisit();
+                            $('#total_visitor').html(app.visitors.length)
+                            console.log(response)
+
                         }).catch(function (error) {
                             console.log(error);
                         });
@@ -822,7 +828,7 @@
                                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                                 }
                             }).then(function (response) {
-                                app.showData()
+                                app.showComment()
                                 app.resetForm();
                             }).catch(function (error) {
                                 console.log(error);
@@ -830,9 +836,8 @@
                         }
 
                     },
-                    showData: function () {
-                        var data = new FormData();
-                        data.append('mod', 'SHOWCOMMENTS');
+                    showComment: function () {
+
                         axios.get(url, {
                             params: {
                                 mod: 'SHOWCOMMENTS'
