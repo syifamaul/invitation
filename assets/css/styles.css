@@ -8,27 +8,27 @@ body {
 
 @font-face {
     font-family: Parisienne-Regular;
-    src: url('assets/fonts/Parisienne-Regular.ttf');
+    src: url('../assets/fonts/Parisienne-Regular.ttf');
 }
 
 @font-face {
     font-family: billy-signature;
-    src: url('assets/fonts/billy_signature.342ac43.ttf');
+    src: url('../assets/fonts/billy_signature.342ac43.ttf');
 }
 
 @font-face {
     font-family: slim_summer;
-    src: url('assets/fonts/slim_summer.otf');
+    src: url('../assets/fonts/slim_summer.otf');
 }
 
 @font-face {
     font-family: Julietta;
-    src: url('assets/fonts/Julietta-Messie.9602406.otf');
+    src: url('../assets/fonts/Julietta-Messie.9602406.otf');
 }
 
 @font-face {
     font-family: Roboto-Light;
-    src: url('assets/fonts/Roboto-Light.0cea398.ttf');
+    src: url('../assets/fonts/Roboto-Light.0cea398.ttf');
 }
 
 .float {
@@ -221,7 +221,7 @@ span.ripple {
 }
 
 #app {
-    background-image: url(assets/images/5615293.jpg);
+    background-image: url(../assets/images/5615293.jpg);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -230,8 +230,8 @@ span.ripple {
 .butterfly {
     width: 16px;
     height: 15px;
-    /* background: url(assets/images/sprite.png) no-repeat 0 -360px; */
-    background-image: url(assets/images/butterfly.png);
+    /* background: url(../assets/images/sprite.png) no-repeat 0 -360px; */
+    background-image: url(../assets/images/butterfly.png);
     position: absolute;
     z-index: 20;
 }
@@ -240,7 +240,7 @@ span.ripple {
 .sun {
     width: 32px;
     height: 42px;
-    background-image: url(assets/images/sun-flower.png);
+    background-image: url(../assets/images/sun-flower.png);
     position: absolute;
     background-repeat: no-repeat;
     background-size: 16px;
@@ -249,7 +249,7 @@ span.ripple {
 .salju {
     width: 32px;
     height: 32px;
-    background-image: url(assets/images/salju.png);
+    background-image: url(../assets/images/salju.png);
     background-repeat: no-repeat;
     background-size: 16px;
     position: absolute;
@@ -278,7 +278,7 @@ footer {
     margin: 2rem 0;
     position: relative;
     padding: 0 !important;
-    background-image: url(assets/images/New_Project__42_.png);
+    background-image: url(../assets/images/New_Project__42_.png);
     background-position-x: right;
     background-position-y: center;
     background-size: cover;
