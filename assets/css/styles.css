@@ -192,8 +192,8 @@ button {
     position: relative;
     overflow: hidden;
     transition: background 400ms;
-    color: rgb(17, 16, 16);
-    background-color: rgba(216, 93, 198, 0.5);
+    color: #FFF;
+    background-color: rgba(186, 113, 152, 0.8);
     padding: 1rem 2rem;
     outline: 2;
     border-radius: 0.25rem;
@@ -280,7 +280,7 @@ footer {
 }
 
 .nav-item>a:hover {
-    color: rgba(250, 87, 155, 0.9);
+    color:#ba7198;
     text-shadow: 4px 4px #000;
 
 }
