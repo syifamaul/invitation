@@ -9,6 +9,11 @@ body {
 @import url("https://fonts.googleapis.com/css?family=Yesteryear");
 
 @font-face {
+    font-family: AbhayaLibre-Bold;
+    src: url('../fonts/AbhayaLibre-Bold.ttf');
+}
+
+@font-face {
     font-family: Parisienne-Regular;
     src: url('../fonts/Parisienne-Regular.ttf');
 }
@@ -176,7 +181,7 @@ body {
 
 
 .text-utama {
-    -webkit-text-fill-color: rgba(255, 128, 9);
+    -webkit-text-fill-color: rgba(250, 87, 155, 0.9);
     -webkit-text-stroke-width: 0.9px;
     -webkit-text-stroke-color: rgb(255, 255, 255);
     text-shadow: 1px 1px #0f0f0f;
@@ -188,7 +193,6 @@ button {
     transition: background 400ms;
     color: rgb(17, 16, 16);
     background-color: rgba(216, 93, 198, 0.5);
-    ;
     padding: 1rem 2rem;
     outline: 2;
     border-radius: 0.25rem;
@@ -217,7 +221,7 @@ span.ripple {
     position: fixed;
     width: 60px;
     height: 60px;
-    background-color: rgba(255, 128, 9, 0.9);
+    background-color: rgba(250, 87, 155, 0.9);
     color: #0f0f0f;
     border: 2px solid #0f0f0f;
     border-radius: 50px;
@@ -228,7 +232,7 @@ span.ripple {
 
 .btn-float:hover {
     color: black;
-    background-color: rgba(255, 128, 9, 0.9);
+    background-color: rgba(250, 87, 155, 0.9);
 }
 
 #app {
@@ -244,6 +248,8 @@ span.ripple {
     /* background: url(../images/sprite.png) no-repeat 0 -360px; */
     background-image: url(../images/butterfly.png);
     position: absolute;
+    background-repeat: no-repeat;
+    background-size: 16px;
     z-index: 20;
 }
 
@@ -272,12 +278,6 @@ footer {
     display: block;
 }
 
-
-/* #fly1{
-            top:-40px;
-            right:24%;
-        } */
-
 .nav-item>a:hover {
     color: rgba(250, 87, 155, 0.9);
     text-shadow: 4px 4px #000;
@@ -298,10 +298,9 @@ footer {
 
 .typed-out {
     overflow: hidden;
-    border-right: .15em solid orange;
+    border-right: .15em solid rgba(250, 87, 155, 0.9);
     white-space: nowrap;
-    animation:
-        typing 1s steps(20, end) forwards;
+    animation: typing 1s steps(20, end) forwards;
     font-size: 1.6rem;
     width: 0;
 }
