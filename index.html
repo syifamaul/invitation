@@ -582,27 +582,38 @@
 
             $('.copy-clipboard').click(function () {
 
-                var btns = document.getElementsByClassName('copy-clipboard')
-                var clipboard = new ClipboardJS(btns);
+                // var btns = document.getElementsByClassName('copy-clipboard')
+                // var clipboard = new ClipboardJS(btns);
                 //var clipboard = new ClipboardJS('.copy-clipboard');
-                if (ClipboardJS.isSupported()) {
-                    clipboard.on('success', function (e) {
-                        navigator.clipboard.writeText(e.text);
-                        //   e.clearSelection();
-                        ClipboardJS.copy(e.text);
-                        alert('Copied the text: ' + e.text)
+                navigator.clipboard.writeText($(this).data('clipboard-text')).then(() => {
+                    /* Resolved - text copied to clipboard */
+                    alert('Copied the text: ' + $(this).data('clipboard-text'))
 
-                    });
+                }, () => {
+                    /* Rejected - clipboard failed */
+                });
 
-                    clipboard.on('error', function (e) {
-                        console.error('Action:', e.action);
-                        console.error('Trigger:', e.trigger);
-                        alert('Failed!')
-                    });
+                // if (ClipboardJS.isSupported()) {
+                //     clipboard.on('success', function (e) {
+                //         navigator.clipboard.writeText(e.text);
+                //         //   e.clearSelection();
+                //         ClipboardJS.copy(e.text);
+                //         alert('Copied the text: ' + e.text)
 
 
 
-                }
+
+                //     });
+
+                //     clipboard.on('error', function (e) {
+                //         console.error('Action:', e.action);
+                //         console.error('Trigger:', e.trigger);
+                //         alert('Failed!')
+                //     });
+
+
+
+                // }
             });
 
 
