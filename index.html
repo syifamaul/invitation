@@ -29,7 +29,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
     <script src="assets/js/jqFloat.js"></script>
     <script src="assets/js/fakeLoader.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script src="assets/js/clipboard.min.js"></script>
 
 </head>
 
@@ -589,6 +589,7 @@
                     clipboard.on('success', function (e) {
                         navigator.clipboard.writeText(e.text);
                         //   e.clearSelection();
+                        ClipboardJS.copy(e.text);
                         alert('Copied the text: ' + e.text)
 
                     });
