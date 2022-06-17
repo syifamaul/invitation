@@ -588,7 +588,7 @@
                 if (ClipboardJS.isSupported()) {
                     clipboard.on('success', function (e) {
                         navigator.clipboard.writeText(e.text);
-                        e.clearSelection();
+                        //   e.clearSelection();
                         alert('Copied the text: ' + e.text)
 
                     });
