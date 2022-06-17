@@ -386,8 +386,9 @@
                                 <ul>
                                     <li>MANDIRI</li>
                                     <li><b>703864615800</b>
-                                        <a data-clipboard-text="703864615800" style="position:cursor;color:blue"
-                                            target="_self" class="btn clip-btn copy-clipboard">
+                                        <a data-clipboard-text="703864615800" data-clipboard-demo=""
+                                            data-clipboard-action="copy" style="position:cursor;color:blue"
+                                            target="_self" class="clip-btn copy-clipboard">
                                             <i class="fa fa-clipboard" aria-hidden="true" style="font-size:14px;"></i>
                                         </a>
                                     </li>
@@ -399,8 +400,9 @@
                                     <li>CIMB</li>
                                     <li><b>703864615800</b>
                                         <a data-clipboard-text="703864615800" style="position:cursor;;color:blue"
-                                            target="_self" class="btn clip-btn copy-clipboard">
-                                            <i class="fa fa-clipboard" aria-hidden="true" style="font-size:14px;"></i>
+                                            target="_self" class="clip-btn copy-clipboard" data-clipboard-demo=""
+                                            data-clipboard-action="copy" <i class="fa fa-clipboard" aria-hidden="true"
+                                            style="font-size:14px;"></i>
                                         </a>
                                     </li>
                                     <li>a/n Achmad Maulana</li>
@@ -577,32 +579,29 @@
                 container: 'body'
             }).show();
 
-            $('.copy-clipboard').click(function () {
-                // if (navigator.clipboard) {
-                //     navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
-                //     console.log('Clipboard API available');
-                //     alert('Copied the text: ' + $(this).attr('data-clipboard-text'))
 
-                // }
+            $('.copy-clipboard').click(function () {
 
                 var clipboard = new ClipboardJS('.copy-clipboard');
                 if (ClipboardJS.isSupported()) {
+
                     clipboard.on('success', function (e) {
-                        // console.info('Action:', e.action);
-                        // console.info('Text:', e.text);
-                        // console.info('Trigger:', e.trigger);
-                        // var copyText = e.text;
-                        // navigator.clipboard.writeText(copyText);
+
+                        navigator.clipboard.writeText(e.text);
                         e.clearSelection();
+                        document.getElementsByClassName("copy-clipboard");
                         alert('Copied the text: ' + e.text)
+
                     });
+
                     clipboard.on('error', function (e) {
                         console.error('Action:', e.action);
                         console.error('Trigger:', e.trigger);
+                        alert('Failed!')
                     });
 
-                    // let text = navigator.clipboard.readText();
-                    // alert(text)
+                    let text = navigator.clipboard.readText();
+                    alert(text)
 
                 }
             });
