@@ -386,11 +386,11 @@
                                 <ul>
                                     <li>MANDIRI</li>
                                     <li><b>703864615800</b>
-                                        <a data-clipboard-text="703864615800" data-clipboard-demo=""
+                                        <button data-clipboard-text="703864615800" data-clipboard-demo=""
                                             data-clipboard-action="copy" style="position:cursor;color:blue"
-                                            target="_self" class="clip-btn copy-clipboard">
+                                            target="_self" class="btn clip-btn copy-clipboard">
                                             <i class="fa fa-clipboard" aria-hidden="true" style="font-size:14px;"></i>
-                                        </a>
+                                        </button>
                                     </li>
                                     <li>a/n Puteri Syifa Ramadhan</li>
                                 </ul>
@@ -399,11 +399,11 @@
                                 <ul>
                                     <li>CIMB</li>
                                     <li><b>703864615800</b>
-                                        <a data-clipboard-text="703864615800" style="position:cursor;;color:blue"
-                                            target="_self" class="clip-btn copy-clipboard" data-clipboard-demo=""
+                                        <button data-clipboard-text="703864615800" style="position:cursor;;color:blue"
+                                            target="_self" class="btn clip-btn copy-clipboard" data-clipboard-demo=""
                                             data-clipboard-action="copy"> <i class="fa fa-clipboard" aria-hidden="true"
                                                 style="font-size:14px;"></i>
-                                        </a>
+                                        </button>
                                     </li>
                                     <li>a/n Achmad Maulana</li>
                                 </ul>
@@ -582,14 +582,13 @@
 
             $('.copy-clipboard').click(function () {
 
-                var clipboard = new ClipboardJS('.copy-clipboard');
+                var btns = document.querySelectorAll('button');
+                var clipboard = new ClipboardJS(btns);
+                //var clipboard = new ClipboardJS('.copy-clipboard');
                 if (ClipboardJS.isSupported()) {
-
                     clipboard.on('success', function (e) {
-
                         navigator.clipboard.writeText(e.text);
                         e.clearSelection();
-                        document.getElementsByClassName("copy-clipboard");
                         alert('Copied the text: ' + e.text)
 
                     });
@@ -600,8 +599,7 @@
                         alert('Failed!')
                     });
 
-                    let text = navigator.clipboard.readText();
-                    alert(text)
+
 
                 }
             });
