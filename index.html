@@ -582,7 +582,7 @@
 
             $('.copy-clipboard').click(function () {
 
-                var btns = document.querySelectorAll('button');
+                var btns = document.getElementsByClassName('copy-clipboard')
                 var clipboard = new ClipboardJS(btns);
                 //var clipboard = new ClipboardJS('.copy-clipboard');
                 if (ClipboardJS.isSupported()) {
