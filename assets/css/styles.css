@@ -4,6 +4,7 @@ body {
     margin: 0%;
     height: 100%;
     color: rgb(138, 106, 133);
+    cursor: url('../images/smi335.cur'), auto !important;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Yesteryear");
@@ -233,7 +234,7 @@ span.ripple {
 
 .btn-float:hover {
     color: black;
-    background-color: rgba(250, 87, 155, 0.9);
+    background-color: rgba(175, 103, 133, 0.9);
 }
 
 #app {
@@ -280,7 +281,7 @@ footer {
 }
 
 .nav-item>a:hover {
-    color:#ba7198;
+    color: #ba7198;
     text-shadow: 4px 4px #000;
 
 }

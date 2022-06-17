@@ -36,7 +36,6 @@
 
 <body class="d-flex flex-column h-100" id="wrapper">
     <div class="fakeLoader"></div>
-
     <!-- Bottom Navbar -->
     <nav class="navbar navbar-dark bg-dark navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none"
         style="z-index: 99999;opacity: 0.9;font-family: 'Fredoka One';">
@@ -69,7 +68,7 @@
     </nav>
 
     <a class="btn-float example-popover" tabindex="0" role="button"
-        style="cursor:pointer ; bottom:12%; left: 1%; padding-top: 15px; " data-bs-toggle="modal"
+        style="cursor:pointer ; bottom:12%; left: 1%; padding-top: 15px;" data-bs-toggle="modal"
         data-bs-placement="left" data-bs-custom-class="custom-popover" data-bs-trigger="hover focus"
         data-bs-content="Amplop Digital" data-bs-target="#modal-amplop-digital">
         <i class="fa fa-envelope-o" aria-hidden="true" style="color:white;"></i>
@@ -88,7 +87,8 @@
                     <img class="" src="assets/images/flower2.png" alt="" width="300vh">
                 </div>
                 <img class="d-block mx-auto mb-4" src="assets/images/bridge1.png" alt="" width="130vw">
-                <h1 class="display-5 fw-bold mx-auto mb-5 text-outline" style="font-family: 'Great Vibes';z-index: 99999;">
+                <h1 class="display-5 fw-bold mx-auto mb-5 text-outline"
+                    style="font-family: 'Great Vibes';z-index: 99999;">
                     <span class="animate__animated animate__tada animate__flip animate__delay-2s">Syifa</span>
                     & <span class="animate__animated animate__tada animate__flip animate__delay-2s">Maulana</span>
                 </h1>
@@ -132,8 +132,8 @@
                     <div class="salju" style="left:5%;top:20%"></div>
                 </div>
             </section>
-            
-            
+
+
             <div class="mb-4 py-3 container">
                 <section id="sec-mempelai">
                     <h4 class="display-5 fw-bold text-outline quote">Calon Pengantin </h4>
@@ -142,8 +142,9 @@
                         <div class="col-sm-6 mb-4">
                             <img src="assets/images/syifa.PNG" class="img-responsive rounded-circle mb-4"
                                 style="width:120px;height:140px; border-radius:50% ; border: 5px dotted rgba(186, 113, 152, 0.8);">
-                            
-                            <h2 class="fw-bold display-6 mt-2" style="font-family:Julietta ;color: #ba7198;">Puteri Syifa
+
+                            <h2 class="fw-bold display-6 mt-2" style="font-family:Julietta ;color: #ba7198;">Puteri
+                                Syifa
                                 Ramadhan S.E</h2>
                             <p class=" mb-4 display-7" style="font-family: Roboto-Light"> Putri dari <br> Bapak Abdul
                                 Kholik & Ibu Tuti Surtini</h4>
@@ -151,19 +152,20 @@
                         <div class="col-sm-6 mb-4">
                             <img src="assets/images/DSCF5469-1.jpg" class="img-responsive rounded-circle mb-4"
                                 style="width:120px;height:140px;border-radius:50% ; border: 5px dotted rgba(186, 113, 152, 0.8);">
-                            <h2 class="fw-bold display-6 mt-2" style="font-family:Julietta ;color: #ba7198;">Achmad Maulana S.Kom
+                            <h2 class="fw-bold display-6 mt-2" style="font-family:Julietta ;color: #ba7198;">Achmad
+                                Maulana S.Kom
                             </h2>
                             <p class="mb-4 display-7" style="font-family: Roboto-Light"> Putra dari <br> Bapak
                                 Sobari & Ibu Siti Aminah</h4>
                         </div>
                     </div>
                     <div class="row" style="font-family: Roboto-Light">
-                         <p class="display-7 fw-bold">Turut Mengundang </p>
-                            <p>Keluarga Besar Ibu Tuti Surtini <br>
-                                Keluarga Besar Ibu Siti Aminah <br>Keluarga Besar PT Big Solution <br>
-                                Keluarga Besar PT Mitra Tour & Travel</p>
+                        <p class="display-7 fw-bold">Turut Mengundang </p>
+                        <p>Keluarga Besar Ibu Tuti Surtini <br>
+                            Keluarga Besar Ibu Siti Aminah <br>Keluarga Besar PT Big Solution <br>
+                            Keluarga Besar PT Mitra Tour & Travel</p>
 
-                         </ul>
+                        </ul>
                     </div>
                 </section>
             </div>
@@ -589,7 +591,8 @@
                         // console.info('Action:', e.action);
                         // console.info('Text:', e.text);
                         // console.info('Trigger:', e.trigger);
-                        navigator.clipboard.writeText(e.text);
+                        // var copyText = e.text;
+                        // navigator.clipboard.writeText(copyText);
                         e.clearSelection();
                         alert('Copied the text: ' + e.text)
                     });
