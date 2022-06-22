@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ba7198">
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/icons8-love-16.png">
     <title>Weeding Invitation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" >
@@ -70,7 +70,7 @@
             <section id="sec-home" style="margin-top:1%;">
                 <img class="d-block mx-auto" src="assets/images/quotes_decor_2.webp">
                 <h1 class="display-1 fw-bold mx-auto mb-2 animate__animated animate__backInDown animate__delay-10s animate__repeat-2"
-                    style="font-family: Parisienne-Regular;">Walimatul Ursy</h1>
+                    style="font-family: Parisienne-Regular;text-shadow:2px 2px rgba(255, 255, 255, 0.8)">Walimatul Ursy</h1>
                 <div class="float" style="right:0; bottom:0; opacity: 0.5;z-index: -99 ">
                     <img src="assets/images/flower2.png" style=" transform: rotate(180deg);" width="300vh">
                 </div>
@@ -79,7 +79,7 @@
                 </div>
                 <img class="d-block mx-auto mb-4" src="assets/images/bridge1.png" alt="" width="130vw">
                 <h1 class="display-5 fw-bold mx-auto mb-5"
-                    style="font-family: 'Great Vibes';">
+                    style="font-family: 'Great Vibes';text-shadow:2px 2px rgba(255, 255, 255, 0.8)">
                     <div class="animate__animated  animate__flip animate__delay-10s animate__repeat-2">Syifa & Maulana</div>
                 </h1>
                 <div aria-live="polite" aria-atomic="true"
@@ -512,11 +512,10 @@
                                 }
                             }).then(function (response) {
                                 alert(response.data);
-                                this.showVisitor();
+                                app.showVisitor();
                                 app.resetFormVisit();
                                 //$("#modal-kehadiran").hide();
-                                var myModal = bootstrap.Modal.getOrCreateInstance($('#modal-kehadiran'));
-                                myModal.hide();
+                                closeModalKehadiran()
 
                             }).catch(function (error) {
                                 console.log(error);
@@ -751,7 +750,11 @@
         }
 
 
-
+        function closeModalKehadiran()
+        {
+            var modalkehadiran = bootstrap.Modal.getOrCreateInstance($('#modal-kehadiran'));  
+            modalkehadiran.hide();
+        }
     </script>
 </body>
 
