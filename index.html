@@ -10,17 +10,17 @@
     <link rel="shortcut icon" href="assets/images/icons8-love-16.png">
     <title>Weeding Invitation</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/animate.min.css" />
     <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="assets/css/fakeLoader.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-   
+
 
 </head>
 
@@ -70,7 +70,8 @@
             <section id="sec-home" style="margin-top:1%;">
                 <img class="d-block mx-auto" src="assets/images/quotes_decor_2.webp">
                 <h1 class="display-1 fw-bold mx-auto mb-2 animate__animated animate__backInDown animate__delay-10s animate__repeat-2"
-                    style="font-family: Parisienne-Regular;text-shadow:2px 2px rgba(255, 255, 255, 0.8)">Walimatul Ursy</h1>
+                    style="font-family: Parisienne-Regular;text-shadow:2px 2px rgba(255, 255, 255, 0.8)">Walimatul Ursy
+                </h1>
                 <div class="float" style="right:0; bottom:0; opacity: 0.5;z-index: -99 ">
                     <img src="assets/images/flower2.png" style=" transform: rotate(180deg);" width="300vh">
                 </div>
@@ -80,7 +81,8 @@
                 <img class="d-block mx-auto mb-4" src="assets/images/bridge1.png" alt="" width="130vw">
                 <h1 class="display-5 fw-bold mx-auto mb-5"
                     style="font-family: 'Great Vibes';text-shadow:2px 2px rgba(255, 255, 255, 0.8)">
-                    <div class="animate__animated  animate__flip animate__delay-10s animate__repeat-2">Syifa & Maulana</div>
+                    <div class="animate__animated  animate__flip animate__delay-10s animate__repeat-2">Syifa & Maulana
+                    </div>
                 </h1>
                 <div aria-live="polite" aria-atomic="true"
                     class="d-flex justify-content-center align-items-center w-100">
@@ -99,7 +101,8 @@
 
                     </div>
                 </div>
-                <h3 class="display-7 fw-bold mb-4 text-dark">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
+                <h3 class="display-7 fw-bold mb-4 text-dark">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ
+                    اَزْوَاجًا
                     لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ
                     بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</h3>
                 <div class="col-lg-6 mx-auto mb-4">
@@ -415,6 +418,8 @@
     <script src="assets/js/jqFloat.js"></script>
     <script src="assets/js/fakeLoader.min.js"></script>
     <script src="assets/js/clipboard.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
 
         $(function () {
@@ -512,10 +517,20 @@
                                 }
                             }).then(function (response) {
                                 alert(response.data);
-                                app.showVisitor();
-                                app.resetFormVisit();
-                                //$("#modal-kehadiran").hide();
-                                closeModalKehadiran()
+                                if (response.data == "Saved") {
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'Your work has been saved',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    app.showVisitor();
+                                    app.resetFormVisit();
+                                    //$("#modal-kehadiran").hide();
+                                    closeModalKehadiran()
+                                }
+
 
                             }).catch(function (error) {
                                 console.log(error);
@@ -526,13 +541,37 @@
                     submitForm: function () {
                         var data = new FormData();
                         if ($('#fromName').val() == '') {
-                            alert('Masukan nama Dulu ya!!')
+                            // alert('Masukan nama Dulu ya!!')
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Masukan nama Dulu ya!!',
+                                // footer: '<a href="">Why do I have this issue?</a>'
+                            })
                         } else if ($('#telepon').val() == '') {
-                            alert('Masukan telepon Dulu ya!!')
+                            // alert('Masukan telepon Dulu ya!!')
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Masukan telepon Dulu ya!!',
+                                // footer: '<a href="">Why do I have this issue?</a>'
+                            })
                         } else if ($('#alamat').val() == '') {
-                            alert('Masukan alamat Dulu ya!!')
+                            // alert('Masukan alamat Dulu ya!!')
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Masukan alamat Dulu ya!!',
+                                // footer: '<a href="">Why do I have this issue?</a>'
+                            })
                         } else if ($('#comment').val() == '') {
-                            alert('Masukan ucapannya Dulu ya!!')
+                            // alert('Masukan ucapannya Dulu ya!!')
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Masukan ucapannya Dulu ya!!',
+                                // footer: '<a href="">Why do I have this issue?</a>'
+                            })
                         } else {
                             data.append('mod', 'ADDCOMMENT');
                             data.append('fromName', $('#fromName').val());
@@ -545,8 +584,21 @@
                                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                                 }
                             }).then(function (response) {
-                                app.showComment()
-                                app.resetForm();
+
+                                if (response.data == "Saved") {
+
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'Your work has been saved',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+
+                                    app.showComment()
+                                    app.resetForm();
+
+                                }
                             }).catch(function (error) {
                                 console.log(error);
                             });
@@ -583,8 +635,14 @@
                 //var clipboard = new ClipboardJS('.copy-clipboard');
                 navigator.clipboard.writeText($(this).data('clipboard-text')).then(() => {
                     /* Resolved - text copied to clipboard */
-                    alert('Copied the text: ' + $(this).data('clipboard-text'))
-
+                    // alert('Copied the text: ' + $(this).data('clipboard-text'))
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Copied the text: ' + $(this).data('clipboard-text'),
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                     //modal-amplop-digital
 
                     var myModal = bootstrap.Modal.getOrCreateInstance($('#modal-amplop-digital'));
@@ -750,9 +808,8 @@
         }
 
 
-        function closeModalKehadiran()
-        {
-            var modalkehadiran = bootstrap.Modal.getOrCreateInstance($('#modal-kehadiran'));  
+        function closeModalKehadiran() {
+            var modalkehadiran = bootstrap.Modal.getOrCreateInstance($('#modal-kehadiran'));
             modalkehadiran.hide();
         }
     </script>
