@@ -54,6 +54,9 @@ body {
     font-size: 12px;
 }
 
+.swal-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+}
 
 .float {
     position: absolute;
