@@ -1,6 +1,6 @@
 html,
 body {
-    font-family: Sofia;
+    /* font-family: Sofia; */
     margin: 0%;
     height: 100%;
     color: rgb(138, 106, 133);
@@ -51,11 +51,19 @@ body {
 }
 
 .swal-title {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
 }
 
+.swal-text {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
 .swal-overlay {
-    background-color: rgba(0, 0, 0, 0.6);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .float {
