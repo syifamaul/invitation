@@ -50,6 +50,11 @@ body {
     background-clip: text;
 }
 
+.swal-title {
+    font-size: 12px;
+}
+
+
 .float {
     position: absolute;
     color: #FFF;
