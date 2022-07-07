@@ -5,6 +5,8 @@ body {
     height: 100%;
     color: rgb(138, 106, 133);
     cursor: url('../images/Normal\ Select\ 1.cur'), auto !important;
+    overflow-x: hidden;
+
 }
 
 @import url("https://fonts.googleapis.com/css?family=Yesteryear");
